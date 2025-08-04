@@ -1,0 +1,2 @@
+*.db filter=gitsqlite
+*.qeax filter=gitsqlite
