@@ -1,34 +1,34 @@
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE t_attribute
-(
-	Object_ID INTEGER NULL DEFAULT 0,
-	Name TEXT NULL COLLATE NOCASE,
-	Scope TEXT NULL COLLATE NOCASE,
-	Stereotype TEXT NULL COLLATE NOCASE,
-	Containment TEXT NULL COLLATE NOCASE,
-	IsStatic INTEGER NULL DEFAULT 0,
-	IsCollection INTEGER NULL DEFAULT 0,
-	IsOrdered INTEGER NULL DEFAULT 0,
-	AllowDuplicates INTEGER NULL DEFAULT 0,
-	LowerBound TEXT NULL COLLATE NOCASE,
-	UpperBound TEXT NULL COLLATE NOCASE,
-	Container TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	Derived TEXT NULL COLLATE NOCASE,
-	ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	Pos INTEGER NULL,
-	GenOption TEXT NULL COLLATE NOCASE,
-	Length INTEGER NULL,
-	Precision INTEGER NULL,
-	Scale INTEGER NULL,
-	Const INTEGER NULL,
-	Style TEXT NULL COLLATE NOCASE,
-	Classifier TEXT NULL COLLATE NOCASE,
-	'Default' TEXT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE,
-	ea_guid TEXT NULL COLLATE NOCASE,
-	StyleEx TEXT NULL COLLATE NOCASE
+CREATE TABLE t_attribute
+(
+	Object_ID INTEGER NULL DEFAULT 0,
+	Name TEXT NULL COLLATE NOCASE,
+	Scope TEXT NULL COLLATE NOCASE,
+	Stereotype TEXT NULL COLLATE NOCASE,
+	Containment TEXT NULL COLLATE NOCASE,
+	IsStatic INTEGER NULL DEFAULT 0,
+	IsCollection INTEGER NULL DEFAULT 0,
+	IsOrdered INTEGER NULL DEFAULT 0,
+	AllowDuplicates INTEGER NULL DEFAULT 0,
+	LowerBound TEXT NULL COLLATE NOCASE,
+	UpperBound TEXT NULL COLLATE NOCASE,
+	Container TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	Derived TEXT NULL COLLATE NOCASE,
+	ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Pos INTEGER NULL,
+	GenOption TEXT NULL COLLATE NOCASE,
+	Length INTEGER NULL,
+	Precision INTEGER NULL,
+	Scale INTEGER NULL,
+	Const INTEGER NULL,
+	Style TEXT NULL COLLATE NOCASE,
+	Classifier TEXT NULL COLLATE NOCASE,
+	'Default' TEXT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE,
+	ea_guid TEXT NULL COLLATE NOCASE,
+	StyleEx TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_attribute VALUES(950,'Status','Public',NULL,'Not Specified',0,0,0,1,'1','1',NULL,'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam','0',406,0,NULL,0,NULL,NULL,0,NULL,NULL,'Ok','String','{651b27de-06d7-ec7c-76e6-78b6504b1249}',NULL);
 INSERT INTO t_attribute VALUES(950,'Name','Public',NULL,'Not Specified',0,0,0,1,'1','1',NULL,'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam','0',407,0,NULL,0,NULL,NULL,0,NULL,NULL,'SystemArchitecture','String','{560ed943-6494-ed60-163e-aa28083b5631}',NULL);
@@ -120,34 +120,34 @@ INSERT INTO t_attribute VALUES(1901,'ModelPackageInfo','Public',NULL,'Not Specif
 INSERT INTO t_attribute VALUES(1901,'Tags','Public',NULL,'Not Specified',0,0,0,0,NULL,NULL,NULL,NULL,'0',882,0,NULL,0,NULL,NULL,0,NULL,NULL,'','String','{9ac6f74d-9308-9f85-47f8-63bff463b50a}',NULL);
 INSERT INTO t_attribute VALUES(1901,'OID','Public',NULL,'Not Specified',0,0,0,0,NULL,NULL,NULL,NULL,'0',883,0,NULL,0,NULL,NULL,0,NULL,NULL,'','String','{bc54aa11-8ada-88af-065d-712a1194fc99}',NULL);
 INSERT INTO t_attribute VALUES(1901,'Owners','Public',NULL,'Not Specified',0,0,0,0,NULL,NULL,NULL,NULL,'0',884,0,NULL,0,NULL,NULL,0,NULL,NULL,'','String','{28155aa2-abaa-27ca-29b6-a8d05c832732}',NULL);
-CREATE TABLE t_attributeconstraints
-(
-	Object_ID INTEGER NULL DEFAULT 0,
-	'Constraint' TEXT NOT NULL COLLATE NOCASE,
-	AttName TEXT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	ID INTEGER NOT NULL,
-	CONSTRAINT pk_attributeconstraints PRIMARY KEY ('Constraint',ID)
+CREATE TABLE t_attributeconstraints
+(
+	Object_ID INTEGER NULL DEFAULT 0,
+	'Constraint' TEXT NOT NULL COLLATE NOCASE,
+	AttName TEXT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	ID INTEGER NOT NULL,
+	CONSTRAINT pk_attributeconstraints PRIMARY KEY ('Constraint',ID)
 );
-CREATE TABLE t_attributetag
-(
-	PropertyID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	ElementID INTEGER NULL DEFAULT 0,
-	Property TEXT NULL COLLATE NOCASE,
-	VALUE TEXT NULL COLLATE NOCASE,
-	NOTES TEXT NULL COLLATE NOCASE,
-	ea_guid TEXT NULL COLLATE NOCASE
+CREATE TABLE t_attributetag
+(
+	PropertyID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	ElementID INTEGER NULL DEFAULT 0,
+	Property TEXT NULL COLLATE NOCASE,
+	VALUE TEXT NULL COLLATE NOCASE,
+	NOTES TEXT NULL COLLATE NOCASE,
+	ea_guid TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_authors
-(
-	AuthorName TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Roles TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_authors
+(
+	AuthorName TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Roles TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_cardinality
-(
-	Cardinality TEXT NOT NULL COLLATE NOCASE PRIMARY KEY
+CREATE TABLE t_cardinality
+(
+	Cardinality TEXT NOT NULL COLLATE NOCASE PRIMARY KEY
 );
 INSERT INTO t_cardinality VALUES('*');
 INSERT INTO t_cardinality VALUES('0');
@@ -156,29 +156,29 @@ INSERT INTO t_cardinality VALUES('0..1');
 INSERT INTO t_cardinality VALUES('1');
 INSERT INTO t_cardinality VALUES('1..');
 INSERT INTO t_cardinality VALUES('1..*');
-CREATE TABLE t_category
-(
-	CategoryID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	Name TEXT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE,
-	NOTES TEXT NULL COLLATE NOCASE
+CREATE TABLE t_category
+(
+	CategoryID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Name TEXT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE,
+	NOTES TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_clients
-(
-	Name TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Organisation TEXT NULL COLLATE NOCASE,
-	Phone1 TEXT NULL COLLATE NOCASE,
-	Phone2 TEXT NULL COLLATE NOCASE,
-	Mobile TEXT NULL COLLATE NOCASE,
-	Fax TEXT NULL COLLATE NOCASE,
-	Email TEXT NULL COLLATE NOCASE,
-	Roles TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_clients
+(
+	Name TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Organisation TEXT NULL COLLATE NOCASE,
+	Phone1 TEXT NULL COLLATE NOCASE,
+	Phone2 TEXT NULL COLLATE NOCASE,
+	Mobile TEXT NULL COLLATE NOCASE,
+	Fax TEXT NULL COLLATE NOCASE,
+	Email TEXT NULL COLLATE NOCASE,
+	Roles TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_complexitytypes
-(
-	Complexity TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	NumericWeight INTEGER NULL DEFAULT 0
+CREATE TABLE t_complexitytypes
+(
+	Complexity TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	NumericWeight INTEGER NULL DEFAULT 0
 );
 INSERT INTO t_complexitytypes VALUES('Extreme',6);
 INSERT INTO t_complexitytypes VALUES('High',4);
@@ -186,87 +186,87 @@ INSERT INTO t_complexitytypes VALUES('Low',2);
 INSERT INTO t_complexitytypes VALUES('Medium',3);
 INSERT INTO t_complexitytypes VALUES('V.High',5);
 INSERT INTO t_complexitytypes VALUES('V.Low',1);
-CREATE TABLE t_connector
-(
-	Connector_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	Name TEXT NULL COLLATE NOCASE,
-	Direction TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	Connector_Type TEXT NULL COLLATE NOCASE,
-	SubType TEXT NULL COLLATE NOCASE,
-	SourceCard TEXT NULL COLLATE NOCASE,
-	SourceAccess TEXT NULL COLLATE NOCASE,
-	SourceElement TEXT NULL COLLATE NOCASE,
-	DestCard TEXT NULL COLLATE NOCASE,
-	DestAccess TEXT NULL COLLATE NOCASE,
-	DestElement TEXT NULL COLLATE NOCASE,
-	SourceRole TEXT NULL COLLATE NOCASE,
-	SourceRoleType TEXT NULL COLLATE NOCASE,
-	SourceRoleNote TEXT NULL COLLATE NOCASE,
-	SourceContainment TEXT NULL COLLATE NOCASE,
-	SourceIsAggregate INTEGER NULL DEFAULT 0,
-	SourceIsOrdered INTEGER NULL DEFAULT 0,
-	SourceQualifier TEXT NULL COLLATE NOCASE,
-	DestRole TEXT NULL COLLATE NOCASE,
-	DestRoleType TEXT NULL COLLATE NOCASE,
-	DestRoleNote TEXT NULL COLLATE NOCASE,
-	DestContainment TEXT NULL COLLATE NOCASE,
-	DestIsAggregate INTEGER NULL DEFAULT 0,
-	DestIsOrdered INTEGER NULL DEFAULT 0,
-	DestQualifier TEXT NULL COLLATE NOCASE,
-	Start_Object_ID INTEGER NULL DEFAULT 0,
-	End_Object_ID INTEGER NULL DEFAULT 0,
-	Top_Start_Label TEXT NULL COLLATE NOCASE,
-	Top_Mid_Label TEXT NULL COLLATE NOCASE,
-	Top_End_Label TEXT NULL COLLATE NOCASE,
-	Btm_Start_Label TEXT NULL COLLATE NOCASE,
-	Btm_Mid_Label TEXT NULL COLLATE NOCASE,
-	Btm_End_Label TEXT NULL COLLATE NOCASE,
-	Start_Edge INTEGER NULL DEFAULT 0,
-	End_Edge INTEGER NULL DEFAULT 0,
-	PtStartX INTEGER NULL DEFAULT 0,
-	PtStartY INTEGER NULL DEFAULT 0,
-	PtEndX INTEGER NULL DEFAULT 0,
-	PtEndY INTEGER NULL DEFAULT 0,
-	SeqNo INTEGER NULL DEFAULT 0,	-- For sequence diagrams - stores sequence number
-	HeadStyle INTEGER NULL DEFAULT 0,	-- Head style - filled, open ... depends on connector
-	LineStyle INTEGER NULL DEFAULT 0,	-- Line is dot, dash... depends on connector
-	RouteStyle INTEGER NULL DEFAULT 0,	-- Route line direct/auto ...user selection
-	IsBold INTEGER NULL DEFAULT 0,	-- Line style is bold or normal
-	LineColor INTEGER NULL DEFAULT 0,	-- Color of line
-	Stereotype TEXT NULL COLLATE NOCASE,
-	VirtualInheritance TEXT NULL COLLATE NOCASE,
-	LinkAccess TEXT NULL COLLATE NOCASE,
-	PDATA1 TEXT NULL COLLATE NOCASE,
-	PDATA2 TEXT NULL COLLATE NOCASE,
-	PDATA3 TEXT NULL COLLATE NOCASE,
-	PDATA4 TEXT NULL COLLATE NOCASE,
-	PDATA5 TEXT NULL COLLATE NOCASE,
-	DiagramID INTEGER NULL DEFAULT 0,
-	ea_guid TEXT NULL COLLATE NOCASE,
-	SourceConstraint TEXT NULL COLLATE NOCASE,
-	DestConstraint TEXT NULL COLLATE NOCASE,
-	SourceIsNavigable INTEGER NULL,
-	DestIsNavigable INTEGER NULL,
-	IsRoot INTEGER NULL,
-	IsLeaf INTEGER NULL,
-	IsSpec INTEGER NULL,
-	SourceChangeable TEXT NULL COLLATE NOCASE,
-	DestChangeable TEXT NULL COLLATE NOCASE,
-	SourceTS TEXT NULL COLLATE NOCASE,
-	DestTS TEXT NULL COLLATE NOCASE,
-	StateFlags TEXT NULL COLLATE NOCASE,
-	ActionFlags TEXT NULL COLLATE NOCASE,
-	IsSignal INTEGER NULL,
-	IsStimulus INTEGER NULL,
-	DispatchAction TEXT NULL COLLATE NOCASE,
-	Target2 INTEGER NULL,
-	StyleEx TEXT NULL COLLATE NOCASE,
-	SourceStereotype TEXT NULL COLLATE NOCASE,
-	DestStereotype TEXT NULL COLLATE NOCASE,
-	SourceStyle TEXT NULL COLLATE NOCASE,
-	DestStyle TEXT NULL COLLATE NOCASE,
-	EventFlags TEXT NULL COLLATE NOCASE
+CREATE TABLE t_connector
+(
+	Connector_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Name TEXT NULL COLLATE NOCASE,
+	Direction TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	Connector_Type TEXT NULL COLLATE NOCASE,
+	SubType TEXT NULL COLLATE NOCASE,
+	SourceCard TEXT NULL COLLATE NOCASE,
+	SourceAccess TEXT NULL COLLATE NOCASE,
+	SourceElement TEXT NULL COLLATE NOCASE,
+	DestCard TEXT NULL COLLATE NOCASE,
+	DestAccess TEXT NULL COLLATE NOCASE,
+	DestElement TEXT NULL COLLATE NOCASE,
+	SourceRole TEXT NULL COLLATE NOCASE,
+	SourceRoleType TEXT NULL COLLATE NOCASE,
+	SourceRoleNote TEXT NULL COLLATE NOCASE,
+	SourceContainment TEXT NULL COLLATE NOCASE,
+	SourceIsAggregate INTEGER NULL DEFAULT 0,
+	SourceIsOrdered INTEGER NULL DEFAULT 0,
+	SourceQualifier TEXT NULL COLLATE NOCASE,
+	DestRole TEXT NULL COLLATE NOCASE,
+	DestRoleType TEXT NULL COLLATE NOCASE,
+	DestRoleNote TEXT NULL COLLATE NOCASE,
+	DestContainment TEXT NULL COLLATE NOCASE,
+	DestIsAggregate INTEGER NULL DEFAULT 0,
+	DestIsOrdered INTEGER NULL DEFAULT 0,
+	DestQualifier TEXT NULL COLLATE NOCASE,
+	Start_Object_ID INTEGER NULL DEFAULT 0,
+	End_Object_ID INTEGER NULL DEFAULT 0,
+	Top_Start_Label TEXT NULL COLLATE NOCASE,
+	Top_Mid_Label TEXT NULL COLLATE NOCASE,
+	Top_End_Label TEXT NULL COLLATE NOCASE,
+	Btm_Start_Label TEXT NULL COLLATE NOCASE,
+	Btm_Mid_Label TEXT NULL COLLATE NOCASE,
+	Btm_End_Label TEXT NULL COLLATE NOCASE,
+	Start_Edge INTEGER NULL DEFAULT 0,
+	End_Edge INTEGER NULL DEFAULT 0,
+	PtStartX INTEGER NULL DEFAULT 0,
+	PtStartY INTEGER NULL DEFAULT 0,
+	PtEndX INTEGER NULL DEFAULT 0,
+	PtEndY INTEGER NULL DEFAULT 0,
+	SeqNo INTEGER NULL DEFAULT 0,	-- For sequence diagrams - stores sequence number
+	HeadStyle INTEGER NULL DEFAULT 0,	-- Head style - filled, open ... depends on connector
+	LineStyle INTEGER NULL DEFAULT 0,	-- Line is dot, dash... depends on connector
+	RouteStyle INTEGER NULL DEFAULT 0,	-- Route line direct/auto ...user selection
+	IsBold INTEGER NULL DEFAULT 0,	-- Line style is bold or normal
+	LineColor INTEGER NULL DEFAULT 0,	-- Color of line
+	Stereotype TEXT NULL COLLATE NOCASE,
+	VirtualInheritance TEXT NULL COLLATE NOCASE,
+	LinkAccess TEXT NULL COLLATE NOCASE,
+	PDATA1 TEXT NULL COLLATE NOCASE,
+	PDATA2 TEXT NULL COLLATE NOCASE,
+	PDATA3 TEXT NULL COLLATE NOCASE,
+	PDATA4 TEXT NULL COLLATE NOCASE,
+	PDATA5 TEXT NULL COLLATE NOCASE,
+	DiagramID INTEGER NULL DEFAULT 0,
+	ea_guid TEXT NULL COLLATE NOCASE,
+	SourceConstraint TEXT NULL COLLATE NOCASE,
+	DestConstraint TEXT NULL COLLATE NOCASE,
+	SourceIsNavigable INTEGER NULL,
+	DestIsNavigable INTEGER NULL,
+	IsRoot INTEGER NULL,
+	IsLeaf INTEGER NULL,
+	IsSpec INTEGER NULL,
+	SourceChangeable TEXT NULL COLLATE NOCASE,
+	DestChangeable TEXT NULL COLLATE NOCASE,
+	SourceTS TEXT NULL COLLATE NOCASE,
+	DestTS TEXT NULL COLLATE NOCASE,
+	StateFlags TEXT NULL COLLATE NOCASE,
+	ActionFlags TEXT NULL COLLATE NOCASE,
+	IsSignal INTEGER NULL,
+	IsStimulus INTEGER NULL,
+	DispatchAction TEXT NULL COLLATE NOCASE,
+	Target2 INTEGER NULL,
+	StyleEx TEXT NULL COLLATE NOCASE,
+	SourceStereotype TEXT NULL COLLATE NOCASE,
+	DestStereotype TEXT NULL COLLATE NOCASE,
+	SourceStyle TEXT NULL COLLATE NOCASE,
+	DestStyle TEXT NULL COLLATE NOCASE,
+	EventFlags TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_connector VALUES(288,'','Source -> Destination',NULL,'UseCase','',NULL,'Public',NULL,NULL,'Public',NULL,NULL,NULL,NULL,NULL,0,0,NULL,NULL,NULL,NULL,NULL,0,0,NULL,724,717,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,3,0,-1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'SX=0;SY=0;EX=0;EY=0;',0,'{1C4E190D-0CC2-4f21-98A4-DBC6BC2967AA}',NULL,NULL,0,-1,0,0,0,'none','none',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'AllowDuplicates=0;Derived=0;Navigable=Non-Navigable;Owned=0;Union=0;','AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;',NULL);
 INSERT INTO t_connector VALUES(289,'','Source -> Destination',NULL,'UseCase','Extends',NULL,'Public',NULL,NULL,'Public',NULL,NULL,NULL,NULL,NULL,0,0,NULL,NULL,NULL,NULL,NULL,0,0,NULL,726,720,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,3,0,-1,'extend',NULL,NULL,NULL,NULL,NULL,NULL,'SX=0;SY=0;EX=0;EY=0;',0,'{486E39B5-2A01-4d32-ADD5-8B621B57125F}',NULL,NULL,0,-1,0,0,0,'none','none',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'AllowDuplicates=0;Derived=0;Navigable=Non-Navigable;Owned=0;Union=0;','AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;',NULL);
@@ -350,27 +350,27 @@ INSERT INTO t_connector VALUES(848,NULL,'Source -> Destination',NULL,'Usage',NUL
 INSERT INTO t_connector VALUES(851,NULL,'Unspecified',NULL,'Association',NULL,NULL,'Public',NULL,NULL,'Public',NULL,NULL,NULL,NULL,'Unspecified',0,0,NULL,NULL,NULL,NULL,'Unspecified',0,0,NULL,1898,747,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,3,0,-1,NULL,'0',NULL,NULL,NULL,NULL,NULL,'SX=0;SY=0;EX=0;EY=0;',0,'{F88F5E6D-6800-4529-8C85-63268910CFAB}',NULL,NULL,0,0,0,0,NULL,'none','none','instance','instance',NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,'Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;','Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;',NULL);
 INSERT INTO t_connector VALUES(853,'MyClass','Destination -> Source',NULL,'Dependency','',NULL,'Public',NULL,NULL,'Public',NULL,NULL,NULL,NULL,NULL,0,0,NULL,NULL,NULL,NULL,NULL,0,0,NULL,1903,1901,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,3,1,-1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,'{896e698b-735c-2d70-b334-725cc4fc79f4}',NULL,NULL,1,0,0,0,0,'none','none',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO t_connector VALUES(854,'','Source -> Destination',NULL,'Usage','',NULL,'Public',NULL,NULL,'Public',NULL,NULL,NULL,NULL,NULL,0,0,NULL,NULL,NULL,NULL,NULL,0,0,NULL,737,747,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,3,0,-1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'SX=0;SY=0;EX=0;EY=0;',0,'{45ED0998-0B5E-4ce4-A6E2-41E3F3E22C66}',NULL,NULL,0,1,0,0,0,'none','none',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'AllowDuplicates=0;Derived=0;Navigable=Non-Navigable;Owned=0;Union=0;','AllowDuplicates=0;Derived=0;Navigable=Navigable;Owned=0;Union=0;',NULL);
-CREATE TABLE t_connectorconstraint
-(
-	ConnectorID INTEGER NOT NULL DEFAULT 0,
-	'Constraint' TEXT NOT NULL COLLATE NOCASE,
-	ConstraintType TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_connectorconstraint PRIMARY KEY (ConnectorID,'Constraint')
+CREATE TABLE t_connectorconstraint
+(
+	ConnectorID INTEGER NOT NULL DEFAULT 0,
+	'Constraint' TEXT NOT NULL COLLATE NOCASE,
+	ConstraintType TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_connectorconstraint PRIMARY KEY (ConnectorID,'Constraint')
 );
-CREATE TABLE t_connectortag
-(
-	PropertyID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	ElementID INTEGER NULL DEFAULT 0,
-	Property TEXT NULL COLLATE NOCASE,
-	VALUE TEXT NULL COLLATE NOCASE,
-	NOTES TEXT NULL COLLATE NOCASE,
-	ea_guid TEXT NULL COLLATE NOCASE
+CREATE TABLE t_connectortag
+(
+	PropertyID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	ElementID INTEGER NULL DEFAULT 0,
+	Property TEXT NULL COLLATE NOCASE,
+	VALUE TEXT NULL COLLATE NOCASE,
+	NOTES TEXT NULL COLLATE NOCASE,
+	ea_guid TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_connectortypes
-(
-	Connector_Type TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Description TEXT NULL COLLATE NOCASE
+CREATE TABLE t_connectortypes
+(
+	Connector_Type TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Description TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_connectortypes VALUES('Abstraction','Abstraction');
 INSERT INTO t_connectortypes VALUES('Aggregation','Aggregation');
@@ -402,10 +402,10 @@ INSERT INTO t_connectortypes VALUES('StateFlow','StateFlow');
 INSERT INTO t_connectortypes VALUES('Substitution','Substitution');
 INSERT INTO t_connectortypes VALUES('Usage','Usage');
 INSERT INTO t_connectortypes VALUES('UseCase','UseCase');
-CREATE TABLE t_constants
-(
-	ConstantName TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	ConstantValue TEXT NULL COLLATE NOCASE
+CREATE TABLE t_constants
+(
+	ConstantName TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	ConstantValue TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_constants VALUES('CompanyName','Sparx Systems');
 INSERT INTO t_constants VALUES('ECF_EC','1.4');
@@ -414,36 +414,36 @@ INSERT INTO t_constants VALUES('HoursPerUCP','20');
 INSERT INTO t_constants VALUES('ProjectName','DOJ');
 INSERT INTO t_constants VALUES('TCF_TC','0.6');
 INSERT INTO t_constants VALUES('TCF_TWF','0.01');
-CREATE TABLE t_constrainttypes
-(
-	'Constraint' TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Description TEXT NULL COLLATE NOCASE,	-- Description of Constraint
-	Notes TEXT NULL COLLATE NOCASE	-- Further notes
+CREATE TABLE t_constrainttypes
+(
+	'Constraint' TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Description TEXT NULL COLLATE NOCASE,	-- Description of Constraint
+	Notes TEXT NULL COLLATE NOCASE	-- Further notes
 );
 INSERT INTO t_constrainttypes VALUES('Invariant','A state the object must always be in','1');
 INSERT INTO t_constrainttypes VALUES('Post-condition','An ending state that must be met','1');
 INSERT INTO t_constrainttypes VALUES('Pre-condition','A starting state that must be met','1');
 INSERT INTO t_constrainttypes VALUES('Process','A process that must occur','1');
-CREATE TABLE t_datatypes
-(
-	Type TEXT NULL COLLATE NOCASE,
-	ProductName TEXT NULL COLLATE NOCASE,
-	DataType TEXT NULL COLLATE NOCASE,
-	Size INTEGER NULL,
-	MaxLen INTEGER NULL,
-	MaxPrec INTEGER NULL,
-	MaxScale INTEGER NULL DEFAULT 0,
-	DefaultLen INTEGER NULL,
-	DefaultPrec INTEGER NULL,
-	DefaultScale INTEGER NULL,
-	User INTEGER NULL,
-	PDATA1 TEXT NULL COLLATE NOCASE,
-	PDATA2 TEXT NULL COLLATE NOCASE,
-	PDATA3 TEXT NULL COLLATE NOCASE,
-	PDATA4 TEXT NULL COLLATE NOCASE,
-	HasLength TEXT NULL COLLATE NOCASE,
-	GenericType TEXT NULL COLLATE NOCASE,
-	DatatypeID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+CREATE TABLE t_datatypes
+(
+	Type TEXT NULL COLLATE NOCASE,
+	ProductName TEXT NULL COLLATE NOCASE,
+	DataType TEXT NULL COLLATE NOCASE,
+	Size INTEGER NULL,
+	MaxLen INTEGER NULL,
+	MaxPrec INTEGER NULL,
+	MaxScale INTEGER NULL DEFAULT 0,
+	DefaultLen INTEGER NULL,
+	DefaultPrec INTEGER NULL,
+	DefaultScale INTEGER NULL,
+	User INTEGER NULL,
+	PDATA1 TEXT NULL COLLATE NOCASE,
+	PDATA2 TEXT NULL COLLATE NOCASE,
+	PDATA3 TEXT NULL COLLATE NOCASE,
+	PDATA4 TEXT NULL COLLATE NOCASE,
+	HasLength TEXT NULL COLLATE NOCASE,
+	GenericType TEXT NULL COLLATE NOCASE,
+	DatatypeID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
 );
 INSERT INTO t_datatypes VALUES('DDL','Oracle','CHAR',1,2000,0,0,1,0,0,0,'1','1','1','1','1','char',1);
 INSERT INTO t_datatypes VALUES('DDL','Oracle','VARCHAR2',1,4000,0,0,50,0,0,0,'1','1','1','1','1','varchar',2);
@@ -1075,37 +1075,37 @@ INSERT INTO t_datatypes VALUES('Code','Java','short',NULL,NULL,NULL,0,NULL,NULL,
 INSERT INTO t_datatypes VALUES('Code','Java','long',NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,'Integer',829);
 INSERT INTO t_datatypes VALUES('Code','Java','float',NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,'Real',830);
 INSERT INTO t_datatypes VALUES('Code','Java','double',NULL,NULL,NULL,0,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,'Real',831);
-CREATE TABLE t_diagram
-(
-	Diagram_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	Package_ID INTEGER NULL DEFAULT 1,	-- Diagram belongs in this package
-	ParentID INTEGER NULL DEFAULT 0,
-	Diagram_Type TEXT NULL COLLATE NOCASE,
-	Name TEXT NULL COLLATE NOCASE,
-	Version TEXT NULL DEFAULT '1.0' COLLATE NOCASE,
-	Author TEXT NULL COLLATE NOCASE,
-	ShowDetails INTEGER NULL DEFAULT 0,
-	Notes TEXT NULL COLLATE NOCASE,
-	Stereotype TEXT NULL COLLATE NOCASE,
-	AttPub INTEGER NOT NULL DEFAULT 1,
-	AttPri INTEGER NOT NULL DEFAULT 1,
-	AttPro INTEGER NOT NULL DEFAULT 1,
-	Orientation TEXT NULL DEFAULT 'P' COLLATE NOCASE,
-	cx INTEGER NULL DEFAULT 0,
-	cy INTEGER NULL DEFAULT 0,
-	Scale INTEGER NULL DEFAULT 100,
-	CreatedDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
-	ModifiedDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
-	HTMLPath TEXT NULL COLLATE NOCASE,
-	ShowForeign INTEGER NOT NULL DEFAULT 1,
-	ShowBorder INTEGER NOT NULL DEFAULT 1,
-	ShowPackageContents INTEGER NOT NULL DEFAULT 1,
-	PDATA TEXT NULL COLLATE NOCASE,
-	Locked INTEGER NOT NULL DEFAULT 0,
-	ea_guid TEXT NULL COLLATE NOCASE,
-	TPos INTEGER NULL,
-	Swimlanes TEXT NULL COLLATE NOCASE,
-	StyleEx TEXT NULL COLLATE NOCASE
+CREATE TABLE t_diagram
+(
+	Diagram_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Package_ID INTEGER NULL DEFAULT 1,	-- Diagram belongs in this package
+	ParentID INTEGER NULL DEFAULT 0,
+	Diagram_Type TEXT NULL COLLATE NOCASE,
+	Name TEXT NULL COLLATE NOCASE,
+	Version TEXT NULL DEFAULT '1.0' COLLATE NOCASE,
+	Author TEXT NULL COLLATE NOCASE,
+	ShowDetails INTEGER NULL DEFAULT 0,
+	Notes TEXT NULL COLLATE NOCASE,
+	Stereotype TEXT NULL COLLATE NOCASE,
+	AttPub INTEGER NOT NULL DEFAULT 1,
+	AttPri INTEGER NOT NULL DEFAULT 1,
+	AttPro INTEGER NOT NULL DEFAULT 1,
+	Orientation TEXT NULL DEFAULT 'P' COLLATE NOCASE,
+	cx INTEGER NULL DEFAULT 0,
+	cy INTEGER NULL DEFAULT 0,
+	Scale INTEGER NULL DEFAULT 100,
+	CreatedDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
+	ModifiedDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
+	HTMLPath TEXT NULL COLLATE NOCASE,
+	ShowForeign INTEGER NOT NULL DEFAULT 1,
+	ShowBorder INTEGER NOT NULL DEFAULT 1,
+	ShowPackageContents INTEGER NOT NULL DEFAULT 1,
+	PDATA TEXT NULL COLLATE NOCASE,
+	Locked INTEGER NOT NULL DEFAULT 0,
+	ea_guid TEXT NULL COLLATE NOCASE,
+	TPos INTEGER NULL,
+	Swimlanes TEXT NULL COLLATE NOCASE,
+	StyleEx TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_diagram VALUES(41,140,0,'Custom','Tracing Overview','1.0','dsiegl',0,unistr('This should give users a quick overview!\u000d\u000a\u000d\u000aHere is some changes.'),NULL,1,1,1,'P',827,1169,100,'2022-10-10 10:23:57','2025-02-24 11:31:52',NULL,1,1,1,'HideRel=0;ShowTags=0;ShowReqs=0;ShowCons=0;OpParams=1;ShowSN=0;ScalePI=0;PPgs.cx=0;PPgs.cy=0;PSize=9;ShowIcons=1;SuppCN=0;HideProps=0;HideParents=0;UseAlias=1;HideAtts=0;HideOps=0;HideStereo=0;HideEStereo=0;ShowRec=1;ShowRes=0;ShowShape=1;FormName=;',0,'{30A8AA95-7198-49b3-B01B-F3F9BEA0173C}',NULL,'locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;tcol=12370374;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;','ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=Extended::Requirements;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=AC6FF8E3;');
 INSERT INTO t_diagram VALUES(49,157,0,'Use Case','Use Cases','1.0','dsiegl',0,NULL,NULL,1,1,1,'P',827,1169,100,'2022-11-07 09:10:51','2025-08-07 08:47:15',NULL,1,1,1,'HideRel=0;ShowTags=0;ShowReqs=0;ShowCons=0;OpParams=1;ShowSN=0;ScalePI=0;PPgs.cx=0;PPgs.cy=0;PSize=9;ShowIcons=1;SuppCN=0;HideProps=0;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideEStereo=0;ShowRec=1;ShowRes=0;ShowShape=1;FormName=;',0,'{E226DADE-7775-4810-B0B3-B92281637941}',NULL,'locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;','ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=SysML1.4::UseCase;STBLDgm=;ShowNotes=0;OPTIONS_707B392D=CCOMP_tracedFrom=0:;OPTIONS_BDF2E014=CCOMP_tracedFrom=0:;OPTIONS_5A1330D1=CCOMP_tracedFrom=0:;OPTIONS_2ED691CC=CCOMP_tracedFrom=0:;OPTIONS_50DF8880=CCOMP_tracedFrom=0:;OPTIONS_D2164FDF=CCOMP_tracedFrom=0:;OPTIONS_6E81156A=CCOMP_tracedFrom=0:;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SF=1;Theme=:119;SaveTag=11788B2C;');
@@ -1115,15 +1115,15 @@ INSERT INTO t_diagram VALUES(73,379,0,'Custom','Trace','1.0','dsiegl',0,NULL,NUL
 INSERT INTO t_diagram VALUES(82,140,0,'Custom','Tracing','1.0','dsiegl',0,NULL,NULL,1,1,1,'P',850,1098,100,'2024-04-22 11:23:22','2025-08-04 08:17:39',NULL,1,1,1,'HideRel=0;ShowTags=0;ShowReqs=0;ShowCons=0;OpParams=1;ShowSN=0;ScalePI=0;PPgs.cx=0;PPgs.cy=0;PSize=1;ShowIcons=1;SuppCN=0;HideProps=0;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideEStereo=0;ShowRec=1;ShowRes=0;ShowShape=1;FormName=;',0,'{57A1E586-6578-4031-A590-A2918DFBAC3C}',NULL,'locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;','ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=SysML1.4::Requirement;STBLDgm=;ShowNotes=0;OPTIONS_CBA672F1=CCOMP_allocatedTo=0:;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SF=1;Theme=:119;SaveTag=5D4843C7;');
 INSERT INTO t_diagram VALUES(107,438,0,'Custom','DIAGRAMIMAGE','1.0','dsiegl',0,NULL,NULL,1,1,1,'P',850,1098,100,'2024-04-30 17:51:48','2024-05-02 13:32:23',NULL,1,1,1,'HideRel=0;ShowTags=0;ShowReqs=0;ShowCons=0;OpParams=1;ShowSN=0;ScalePI=0;PPgs.cx=0;PPgs.cy=0;PSize=1;ShowIcons=1;SuppCN=0;HideProps=0;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideEStereo=0;ShowRec=1;ShowRes=0;ShowShape=1;FormName=;',0,'{D0BC5BD0-BFF3-4821-B8A6-F42C0B6E8F82}',0,'locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;','ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=Extended::ModelDocument;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=DD10EEFF;');
 INSERT INTO t_diagram VALUES(108,157,0,'Use Case','Real World Use Cases','1.0','chris',0,NULL,NULL,1,1,1,'P',850,1098,100,'2024-10-10 11:57:30','2025-08-04 09:24:17',NULL,1,1,1,'HideRel=0;ShowTags=0;ShowReqs=0;ShowCons=0;OpParams=1;ShowSN=0;ScalePI=0;PPgs.cx=0;PPgs.cy=0;PSize=1;ShowIcons=1;SuppCN=0;HideProps=0;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideEStereo=0;ShowRec=1;ShowRes=0;ShowShape=1;FormName=;',0,'{AE39919A-2A00-40d0-87F6-A1A868FD6E95}',NULL,'locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;','ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=SysML1.4::UseCase;STBLDgm=;ShowNotes=0;OPTIONS_7B024D0F=CCOMP_tracedFrom=0:;OPTIONS_D10F17E6=CCOMP_tracedFrom=0:;OPTIONS_47756730=CCOMP_tracedFrom=0:CCOMP_satisfiedBy=0:;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SF=1;Theme=:119;SaveTag=8B24D6B5;');
-CREATE TABLE t_diagramlinks
-(
-	DiagramID INTEGER NULL,
-	ConnectorID INTEGER NULL DEFAULT 0,
-	Geometry TEXT NULL COLLATE NOCASE,
-	Style TEXT NULL COLLATE NOCASE,
-	Hidden INTEGER NOT NULL DEFAULT 0,
-	Path TEXT NULL COLLATE NOCASE,
-	Instance_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+CREATE TABLE t_diagramlinks
+(
+	DiagramID INTEGER NULL,
+	ConnectorID INTEGER NULL DEFAULT 0,
+	Geometry TEXT NULL COLLATE NOCASE,
+	Style TEXT NULL COLLATE NOCASE,
+	Hidden INTEGER NOT NULL DEFAULT 0,
+	Path TEXT NULL COLLATE NOCASE,
+	Instance_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
 );
 INSERT INTO t_diagramlinks VALUES(49,293,'SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=CX=38:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;','Mode=3;EOID=FA8C9622;SOID=DD4C1A5E;Color=-1;LWidth=0;',0,'',247);
 INSERT INTO t_diagramlinks VALUES(49,294,'SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=38:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;','Mode=3;EOID=663C6B9B;SOID=DD4C1A5E;Color=-1;LWidth=0;',0,'',248);
@@ -1190,17 +1190,17 @@ INSERT INTO t_diagramlinks VALUES(49,848,'SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;
 INSERT INTO t_diagramlinks VALUES(49,854,'EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=25:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;','Mode=3;EOID=BDF2E014;SOID=3B0C74D3;Color=-1;LWidth=0;',0,NULL,763);
 INSERT INTO t_diagramlinks VALUES(49,851,'EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;','Mode=3;EOID=BDF2E014;SOID=BFA6B35F;Color=-1;LWidth=0;',0,NULL,764);
 INSERT INTO t_diagramlinks VALUES(108,851,'EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;','Mode=3;EOID=7B024D0F;SOID=62B77F2D;Color=-1;LWidth=0;',0,NULL,765);
-CREATE TABLE t_diagramobjects
-(
-	Diagram_ID INTEGER NULL DEFAULT 0,
-	Object_ID INTEGER NULL DEFAULT 0,
-	RectTop INTEGER NULL DEFAULT 0,
-	RectLeft INTEGER NULL DEFAULT 0,
-	RectRight INTEGER NULL DEFAULT 0,
-	RectBottom INTEGER NULL DEFAULT 0,
-	Sequence INTEGER NULL DEFAULT 0,
-	ObjectStyle TEXT NULL COLLATE NOCASE,
-	Instance_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+CREATE TABLE t_diagramobjects
+(
+	Diagram_ID INTEGER NULL DEFAULT 0,
+	Object_ID INTEGER NULL DEFAULT 0,
+	RectTop INTEGER NULL DEFAULT 0,
+	RectLeft INTEGER NULL DEFAULT 0,
+	RectRight INTEGER NULL DEFAULT 0,
+	RectBottom INTEGER NULL DEFAULT 0,
+	Sequence INTEGER NULL DEFAULT 0,
+	ObjectStyle TEXT NULL COLLATE NOCASE,
+	Instance_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
 );
 INSERT INTO t_diagramobjects VALUES(49,737,-811,1520,1565,-901,12,'DUID=3B0C74D3;',284);
 INSERT INTO t_diagramobjects VALUES(49,730,-1881,682,787,-1951,15,'DUID=52D65A3F;',285);
@@ -1276,11 +1276,11 @@ INSERT INTO t_diagramobjects VALUES(49,1898,-42,425,470,-132,11,'DUID=BFA6B35F;'
 INSERT INTO t_diagramobjects VALUES(108,1898,-67,413,458,-157,2,'DUID=62B77F2D;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;',872);
 INSERT INTO t_diagramobjects VALUES(49,1904,-41,160,205,-131,1,'DUID=D0951FB1;',873);
 INSERT INTO t_diagramobjects VALUES(108,1904,-37,350,395,-127,1,'DUID=DDEA0798;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;',874);
-CREATE TABLE t_diagramtypes
-(
-	Diagram_Type TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Name TEXT NULL COLLATE NOCASE,
-	Package_ID INTEGER NULL DEFAULT 0
+CREATE TABLE t_diagramtypes
+(
+	Diagram_Type TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Name TEXT NULL COLLATE NOCASE,
+	Package_ID INTEGER NULL DEFAULT 0
 );
 INSERT INTO t_diagramtypes VALUES('Activity','Activity',1);
 INSERT INTO t_diagramtypes VALUES('Analysis','Analysis',1);
@@ -1297,31 +1297,31 @@ INSERT INTO t_diagramtypes VALUES('Sequence','Sequence',1);
 INSERT INTO t_diagramtypes VALUES('Statechart','Statechart',1);
 INSERT INTO t_diagramtypes VALUES('Timing','Timing',1);
 INSERT INTO t_diagramtypes VALUES('Use Case','Use Case View',1);
-CREATE TABLE t_document
-(
-	DocID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	DocName TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	Style TEXT NULL COLLATE NOCASE,
-	ElementID TEXT NOT NULL COLLATE NOCASE,
-	ElementType TEXT NOT NULL COLLATE NOCASE,
-	StrContent TEXT NULL COLLATE NOCASE,
-	BinContent BLOB NULL,
-	DocType TEXT NULL COLLATE NOCASE,
-	Author TEXT NULL COLLATE NOCASE,
-	Version TEXT NULL COLLATE NOCASE,
-	IsActive INTEGER NULL DEFAULT 1,
-	Sequence INTEGER NULL DEFAULT 0,
-	DocDate TEXT NULL COLLATE NOCASE
+CREATE TABLE t_document
+(
+	DocID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	DocName TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	Style TEXT NULL COLLATE NOCASE,
+	ElementID TEXT NOT NULL COLLATE NOCASE,
+	ElementType TEXT NOT NULL COLLATE NOCASE,
+	StrContent TEXT NULL COLLATE NOCASE,
+	BinContent BLOB NULL,
+	DocType TEXT NULL COLLATE NOCASE,
+	Author TEXT NULL COLLATE NOCASE,
+	Version TEXT NULL COLLATE NOCASE,
+	IsActive INTEGER NULL DEFAULT 1,
+	Sequence INTEGER NULL DEFAULT 0,
+	DocDate TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_document VALUES('{9A3878D0-AD33-4871-942C-12FEBD88F136}','LemonTree',NULL,NULL,'TECHNOLOGY','TECHNOLOGY',NULL,X'504b0304140000000800485069557444e89737050000b41b0000070011007374722e64617455540d00079c7a6b639c7a6b639c7a6b63ed5959731a4710eed750e5ff40f935a5238e2d452e2297088e8240872d64398fdcc6468bc222cbf2afcff775efeccceeb2023bc953a82998d9beafe91d869abc922f722353a9ca6719ca5c6299c84c22f9559eca4fb22dbb98abc044d2077c006c2463c55e49477e972d50ed294d2c0be9023bc0f754650c952ec29af85772284fa422353995861c437607147df9a014e418cbc3a3761c82b701685fee60336da2c6454259c53c50fa3670370aeb40d21083fa23d092cb282658f55453b8ae96f096db44b933d83004f671c997a01b81f21e7650721531b801f60f95c2b88e4071256fa5a992ee756c23325e4ab8ded68cdc80724723d3d608ce74dd04bc8b276a5920aab7627ef7c0bf50dcad6ab5dc47b0fd2562b7509a3bc88ef01c6b6e188d2ed65b982780cca1214e3cd94a2c202ff3c08fe98a553a257ab9d41dc1ea9eca1ba26a9e6b4edfc82744f2991cc1dba3cc68c89fe97a96ae5ea7ab7abab2751d1e7b888d4601b26a540a90fca8236e63b94694df63074c51cf2df94d2ee44cf691e5b19c23175d787b8a6fc29bf0fb0c1ff2cdc09397b76a788b4e502d53c4d36938838e6b7981a703d4685fabf7bd561eab84b3c18d6e2fe5a39c2f8578978f3674ec251e0e91af8a4afe19eb16a02354600bdf178fce46e7f89ca436e41ea3e6f31add68827a807a71f49c2788c119bc3a96af2af723e45654533bd1b87c364ae3dc0d249964c664816839cd75547f5fdea53133cb47cadfc2fe0f7330945f329ef6128b6ce530467910709a252e260eeeea84f555579f2dcb3ed6ce935350ff987a40fe6b586d16d2436f29e195208ae43cc848e4ecea84157b829dcdbc3f03cceaa817f8e863cb67af791f5cac76c6f6263313eee81c5f366b84384d6eef90f35c6958d97f2db1c0624c5fcf616b5e63d1228b49989b503f2bdbf68ecfd2fa16b4fe050bdc1e263dbb092dfa6fb39097e373607dada9d5f751581d97e8da56d9f94ae41ea0866c259e2659b139b4d0d521f94e208372b275f822edb0dc8b3c6f847bf1abf6b558bb4025c896abecec6e0ca3dd493470ef783e9364920729dcf5fab01fbd4315780fc27eb49b7af06dfd88f5e025f97ec45e9fef886eb4f1a67d80178ede59ee73e3b3ebf75a087194c59e6cdd3eafb16cb8988439609d50ee1c10567407783f1b9cfdc828ad2e2669b7cf6b5877b04ede4087ab58b773e819f7b09b1ddc7558ebf5576bbcfb6b88973f5df1acc5f885272f9e89a2cd292c3336a7b0cd29acd8f536a7b0cd296cf91968730a0b73b039856d4e61abc7fffd14169ebcae749f5ee83969a4f9e469a80c53450ec3e7f0acc69bc629ace419a9223fe858ef16f239bc7c8d0ceec1af3a9eb6e0edd3c23d64feb6b18abdce67de9ef621951cdf72fbb85a1e6f0bbd2786a5047e7b0c71970aa71cea7067ca90a68c2aeb658c48c50aa70543c4a76839217dec72ae0f12dffa90c6e7fde4b9876c33c7bc2b9e2b86b7cfc4f0e694f62fc7f61432502b5753dc6b0617a8c590e2834287c2d3b7cb82dd4987d1603c8ee0e9add84d6d8c3cf077419626a4e28d77586f47f071acd11c075595cdda3a5262fd7dd007fff74bc9560e2354f4d724d87e22df5c2564f3ff49f89bc3b2fe59f8efc05d8229b36827b06919becce20666aea9cdfeb37828d55126e35839e9092d9da09b87112c4a5aedff04b9b884cf3de17f24fced7727ec193ded36c5a82c2085eb32cbbf373a6f319b4ff13fa80a76962e22bbdcbed0bab21d409a655d23db7d96d364fb4f0dd2f90ee05b6080b79f8b6227a5ce5a58030dadbad74a61bf8f341f16892235cf45cc147b2a2b6a9aeb9e3b25fd9398656f1ac39761ed0db5238ffd3f76287f03504b0102170b140000000800485069557444e89737050000b41b00000700090000000000000000000080000000007374722e64617455540500079c7a6b63504b050600000000010001003e0000006d0500000000','TECHNOLOGY',NULL,NULL,1,0,NULL);
-CREATE TABLE t_ecf
-(
-	ECFID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Technical Factor Code
-	Description TEXT NULL COLLATE NOCASE,	-- Description of TCF
-	Weight REAL NULL DEFAULT 1,	-- Weighting
-	Value REAL NULL DEFAULT 0,
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_ecf
+(
+	ECFID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Technical Factor Code
+	Description TEXT NULL COLLATE NOCASE,	-- Description of TCF
+	Weight REAL NULL DEFAULT 1,	-- Weighting
+	Value REAL NULL DEFAULT 0,
+	Notes TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_ecf VALUES('ECF01','Familiar with Rational Unified Process',1.5,4.0,'1');
 INSERT INTO t_ecf VALUES('ECF02','Application experience',0.5,3.0,'1');
@@ -1331,12 +1331,12 @@ INSERT INTO t_ecf VALUES('ECF05','Motivation',1.0,3.0,'1');
 INSERT INTO t_ecf VALUES('ECF06','Stable requirements',2.0,4.0,'1');
 INSERT INTO t_ecf VALUES('ECF07','Part-time workers',-1.0,0.0,'1');
 INSERT INTO t_ecf VALUES('ECF08','Difficult programming language',-1.0,3.0,'1');
-CREATE TABLE t_efforttypes
-(
-	EffortType TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Effort Code
-	Description TEXT NULL COLLATE NOCASE,	-- Description of Effort
-	NumericWeight REAL NULL DEFAULT 0,	-- Numeric factor to apply to effort - accepts decimal fractions
-	Notes TEXT NULL COLLATE NOCASE	-- Further Notes
+CREATE TABLE t_efforttypes
+(
+	EffortType TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Effort Code
+	Description TEXT NULL COLLATE NOCASE,	-- Description of Effort
+	NumericWeight REAL NULL DEFAULT 0,	-- Numeric factor to apply to effort - accepts decimal fractions
+	Notes TEXT NULL COLLATE NOCASE	-- Further Notes
 );
 INSERT INTO t_efforttypes VALUES('Analysis','Analyzing System',1.0,'Analysis');
 INSERT INTO t_efforttypes VALUES('Coding','Developing code',1.0,'Code writing');
@@ -1344,21 +1344,21 @@ INSERT INTO t_efforttypes VALUES('Construction','Design and build system compone
 INSERT INTO t_efforttypes VALUES('Design','Designing specifications',1.0,'Process of developing system design');
 INSERT INTO t_efforttypes VALUES('Elaboration','Refine specification. Set up project',1.0,'The elaboration phase is concerned with refining the system specification, setting up project infrastructure and agreeing on the body of work to be completed.');
 INSERT INTO t_efforttypes VALUES('Transition','Implementation, acceptance testing',1.0,'The Transition phase revolves around the implementation of the project and the acceptance testing carried out by the end user');
-CREATE TABLE t_files
-(
-	FileID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	AppliesTo TEXT NULL COLLATE NOCASE,
-	Category TEXT NULL COLLATE NOCASE,
-	Name TEXT NULL COLLATE NOCASE,
-	File TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	FileDate TEXT NULL COLLATE NOCASE,
-	FileSize INTEGER NULL
+CREATE TABLE t_files
+(
+	FileID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	AppliesTo TEXT NULL COLLATE NOCASE,
+	Category TEXT NULL COLLATE NOCASE,
+	Name TEXT NULL COLLATE NOCASE,
+	File TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	FileDate TEXT NULL COLLATE NOCASE,
+	FileSize INTEGER NULL
 );
-CREATE TABLE t_genopt
-(
-	AppliesTo TEXT NULL COLLATE NOCASE,
-	Option TEXT NULL COLLATE NOCASE
+CREATE TABLE t_genopt
+(
+	AppliesTo TEXT NULL COLLATE NOCASE,
+	Option TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_genopt VALUES('CMACRO','_AFX_NO_DEBUG_CRT;_AFX_NO_OCC_SUPPORT;_AFX_OLD_EXCEPTIONS;_AFX_PACKING;_AFXDLL;_DEBUG;_MSC_VER;_UNICODE;AFX_CDECL;AFX_COMDAT;AFX_DATA;AFX_DATADEF;AFX_NOVTABLE;AFXAPI;APICALL;BEGIN_INTERFACE_PART ^ END_INTERFACE_PART;BEGIN_PARAM_MAP ^ END_PARAM_MAP;CONTROLLER_API;DECLARE_DYNAMIC();DECLARE_DYNCREATE();DECLARE_INTERFACE_MAP();DECLARE_MESSAGE_MAP();defined();PASCAL;SWLAPI;WINAPI;');
 INSERT INTO t_genopt VALUES('Status','1');
@@ -1367,55 +1367,55 @@ INSERT INTO t_genopt VALUES('statemachine','STM_Java_UseNewTemplate=1;STM_Java_O
 INSERT INTO t_genopt VALUES('scenario','usesManagedList=0;');
 INSERT INTO t_genopt VALUES('mdgtech','{ll embedded c}DefaultExtension=.h;CollClassID=FC87E352;');
 INSERT INTO t_genopt VALUES('mdgtech','{ll embedded c++}DefaultExtension=.h;CollClassID=3C398470;');
-CREATE TABLE t_glossary
-(
-	Term TEXT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE,
-	Meaning TEXT NULL COLLATE NOCASE,
-	GlossaryID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+CREATE TABLE t_glossary
+(
+	Term TEXT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE,
+	Meaning TEXT NULL COLLATE NOCASE,
+	GlossaryID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
 );
-CREATE TABLE t_html
-(
-	Type TEXT NULL COLLATE NOCASE,
-	Template TEXT NULL COLLATE NOCASE
+CREATE TABLE t_html
+(
+	Type TEXT NULL COLLATE NOCASE,
+	Template TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_image
-(
-	ImageID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	Name TEXT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE,
-	Image BLOB NULL
+CREATE TABLE t_image
+(
+	ImageID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Name TEXT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE,
+	Image BLOB NULL
 );
-CREATE TABLE t_implement
-(
-	Type TEXT NULL COLLATE NOCASE
+CREATE TABLE t_implement
+(
+	Type TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_implement VALUES('Requirement');
 INSERT INTO t_implement VALUES('UseCase');
 INSERT INTO t_implement VALUES('Component');
-CREATE TABLE t_issues
-(
-	Issue TEXT NULL COLLATE NOCASE,
-	IssueDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
-	Owner TEXT NULL COLLATE NOCASE,
-	Status TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	Resolver TEXT NULL COLLATE NOCASE,
-	DateResolved TEXT NULL COLLATE NOCASE,
-	Resolution TEXT NULL COLLATE NOCASE,
-	IssueID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	Category TEXT NULL COLLATE NOCASE,
-	Priority TEXT NULL COLLATE NOCASE,
-	Severity TEXT NULL COLLATE NOCASE,
-	IssueType TEXT NULL COLLATE NOCASE
+CREATE TABLE t_issues
+(
+	Issue TEXT NULL COLLATE NOCASE,
+	IssueDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
+	Owner TEXT NULL COLLATE NOCASE,
+	Status TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	Resolver TEXT NULL COLLATE NOCASE,
+	DateResolved TEXT NULL COLLATE NOCASE,
+	Resolution TEXT NULL COLLATE NOCASE,
+	IssueID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Category TEXT NULL COLLATE NOCASE,
+	Priority TEXT NULL COLLATE NOCASE,
+	Severity TEXT NULL COLLATE NOCASE,
+	IssueType TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_lists
-(
-	ListID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Category TEXT NULL COLLATE NOCASE,
-	Name TEXT NULL COLLATE NOCASE,
-	NVal INTEGER NULL,
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_lists
+(
+	ListID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Category TEXT NULL COLLATE NOCASE,
+	Name TEXT NULL COLLATE NOCASE,
+	NVal INTEGER NULL,
+	Notes TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_lists VALUES('{1E9843C4-0788-4948-8FCA-EF9E0D9B9369}','ConstStatusType','Build',1,'1');
 INSERT INTO t_lists VALUES('{4C61C3E6-B721-41a7-BFB3-699DF50BC4D9}','ConstStatusType','Validated',1,'1');
@@ -1423,92 +1423,92 @@ INSERT INTO t_lists VALUES('{5A276B14-D271-431f-A63C-D76B5572F829}','ConstStatus
 INSERT INTO t_lists VALUES('{AC15A9A3-8278-4e4e-AA88-23DF5EA35B43}','ConstStatusType','Approved',1,'1');
 INSERT INTO t_lists VALUES('{CD22EDBC-4F15-4b1c-A8D9-EAC780A2CE98}','ConstStatusType','Mandatory',1,'1');
 INSERT INTO t_lists VALUES('{FDF9A368-23F8-4730-9637-D43E35628A12}','ConstStatusType','Implemented',1,'1');
-CREATE TABLE t_mainttypes
-(
-	MaintType TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Maintenance Type
-	Description TEXT NULL COLLATE NOCASE,	-- Description of the maintenance
-	NumericWeight REAL NULL DEFAULT 1,	-- Numeric weight to apply to this type of problem type
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_mainttypes
+(
+	MaintType TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Maintenance Type
+	Description TEXT NULL COLLATE NOCASE,	-- Description of the maintenance
+	NumericWeight REAL NULL DEFAULT 1,	-- Numeric weight to apply to this type of problem type
+	Notes TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_method
-(
-	Object_ID INTEGER NOT NULL DEFAULT 0,
-	Name TEXT NOT NULL COLLATE NOCASE,
-	Scope TEXT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_method PRIMARY KEY (Object_ID,Name)
+CREATE TABLE t_method
+(
+	Object_ID INTEGER NOT NULL DEFAULT 0,
+	Name TEXT NOT NULL COLLATE NOCASE,
+	Scope TEXT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_method PRIMARY KEY (Object_ID,Name)
 );
-CREATE TABLE t_metrictypes
-(
-	Metric TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Metric Code
-	Description TEXT NULL COLLATE NOCASE,	-- Description of Metric
-	NumericWeight REAL NULL DEFAULT 1,	-- Numeric factor to apply to metric - accepts decimal fractions
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_metrictypes
+(
+	Metric TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Metric Code
+	Description TEXT NULL COLLATE NOCASE,	-- Description of Metric
+	NumericWeight REAL NULL DEFAULT 1,	-- Numeric factor to apply to metric - accepts decimal fractions
+	Notes TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_metrictypes VALUES('Breakage','Convergence, rework, software scrap',1.0,'Reworked SLOC per change. ');
 INSERT INTO t_metrictypes VALUES('Change','Change control, stability',1.0,'Change requests, ');
 INSERT INTO t_metrictypes VALUES('Cost','Budget, cost, expenditure',1.0,'Cost per day, percentage expended.');
 INSERT INTO t_metrictypes VALUES('Progress','Iteration, planning, actuals',1.0,'Measures such as function points, SLOC, scenarios, test cases.');
 INSERT INTO t_metrictypes VALUES('Team','Staffing, team dynamics',1.0,'Resource turnover');
-CREATE TABLE t_object
-(
-	Object_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,	-- The object unique ID
-	Object_Type TEXT NULL COLLATE NOCASE,	-- The object Type
-	Diagram_ID INTEGER NULL DEFAULT 0,	-- Diagram ID
-	Name TEXT NULL COLLATE NOCASE,	-- Object Name
-	Alias TEXT NULL COLLATE NOCASE,
-	Author TEXT NULL COLLATE NOCASE,
-	Version TEXT NULL DEFAULT '1.0' COLLATE NOCASE,
-	Note TEXT NULL COLLATE NOCASE,
-	Package_ID INTEGER NULL DEFAULT 0,
-	Stereotype TEXT NULL COLLATE NOCASE,
-	NType INTEGER NULL DEFAULT 0,
-	Complexity TEXT NULL DEFAULT '2' COLLATE NOCASE,	-- Subjective Measure of object complexity
-	Effort INTEGER NULL DEFAULT 0,	-- Estimated Effort
-	Style TEXT NULL COLLATE NOCASE,
-	Backcolor INTEGER NULL DEFAULT 0,
-	BorderStyle INTEGER NULL DEFAULT 0,	-- Dash, dot ... depends on object - default = solid
-	BorderWidth INTEGER NULL DEFAULT 0,
-	Fontcolor INTEGER NULL DEFAULT 0,
-	Bordercolor INTEGER NULL DEFAULT 0,
-	CreatedDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
-	ModifiedDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
-	Status TEXT NULL COLLATE NOCASE,
-	Abstract TEXT NULL COLLATE NOCASE,
-	Tagged INTEGER NULL DEFAULT 0,
-	PDATA1 TEXT NULL COLLATE NOCASE,
-	PDATA2 TEXT NULL COLLATE NOCASE,
-	PDATA3 TEXT NULL COLLATE NOCASE,
-	PDATA4 TEXT NULL COLLATE NOCASE,
-	PDATA5 TEXT NULL COLLATE NOCASE,
-	Concurrency TEXT NULL COLLATE NOCASE,
-	Visibility TEXT NULL COLLATE NOCASE,
-	Persistence TEXT NULL COLLATE NOCASE,
-	Cardinality TEXT NULL COLLATE NOCASE,
-	GenType TEXT NULL COLLATE NOCASE,
-	GenFile TEXT NULL COLLATE NOCASE,
-	Header1 TEXT NULL COLLATE NOCASE,
-	Header2 TEXT NULL COLLATE NOCASE,
-	Phase TEXT NULL COLLATE NOCASE,
-	Scope TEXT NULL COLLATE NOCASE,
-	GenOption TEXT NULL COLLATE NOCASE,
-	GenLinks TEXT NULL COLLATE NOCASE,
-	Classifier INTEGER NULL,
-	ea_guid TEXT NULL COLLATE NOCASE,
-	ParentID INTEGER NULL,
-	RunState TEXT NULL COLLATE NOCASE,
-	Classifier_guid TEXT NULL COLLATE NOCASE,
-	TPos INTEGER NULL,
-	IsRoot INTEGER NULL DEFAULT 0,
-	IsLeaf INTEGER NULL DEFAULT 0,
-	IsSpec INTEGER NULL DEFAULT 0,
-	IsActive INTEGER NULL DEFAULT 0,
-	StateFlags TEXT NULL COLLATE NOCASE,
-	PackageFlags TEXT NULL COLLATE NOCASE,
-	Multiplicity TEXT NULL COLLATE NOCASE,
-	StyleEx TEXT NULL COLLATE NOCASE,
-	ActionFlags TEXT NULL COLLATE NOCASE,
-	EventFlags TEXT NULL COLLATE NOCASE
+CREATE TABLE t_object
+(
+	Object_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,	-- The object unique ID
+	Object_Type TEXT NULL COLLATE NOCASE,	-- The object Type
+	Diagram_ID INTEGER NULL DEFAULT 0,	-- Diagram ID
+	Name TEXT NULL COLLATE NOCASE,	-- Object Name
+	Alias TEXT NULL COLLATE NOCASE,
+	Author TEXT NULL COLLATE NOCASE,
+	Version TEXT NULL DEFAULT '1.0' COLLATE NOCASE,
+	Note TEXT NULL COLLATE NOCASE,
+	Package_ID INTEGER NULL DEFAULT 0,
+	Stereotype TEXT NULL COLLATE NOCASE,
+	NType INTEGER NULL DEFAULT 0,
+	Complexity TEXT NULL DEFAULT '2' COLLATE NOCASE,	-- Subjective Measure of object complexity
+	Effort INTEGER NULL DEFAULT 0,	-- Estimated Effort
+	Style TEXT NULL COLLATE NOCASE,
+	Backcolor INTEGER NULL DEFAULT 0,
+	BorderStyle INTEGER NULL DEFAULT 0,	-- Dash, dot ... depends on object - default = solid
+	BorderWidth INTEGER NULL DEFAULT 0,
+	Fontcolor INTEGER NULL DEFAULT 0,
+	Bordercolor INTEGER NULL DEFAULT 0,
+	CreatedDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
+	ModifiedDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
+	Status TEXT NULL COLLATE NOCASE,
+	Abstract TEXT NULL COLLATE NOCASE,
+	Tagged INTEGER NULL DEFAULT 0,
+	PDATA1 TEXT NULL COLLATE NOCASE,
+	PDATA2 TEXT NULL COLLATE NOCASE,
+	PDATA3 TEXT NULL COLLATE NOCASE,
+	PDATA4 TEXT NULL COLLATE NOCASE,
+	PDATA5 TEXT NULL COLLATE NOCASE,
+	Concurrency TEXT NULL COLLATE NOCASE,
+	Visibility TEXT NULL COLLATE NOCASE,
+	Persistence TEXT NULL COLLATE NOCASE,
+	Cardinality TEXT NULL COLLATE NOCASE,
+	GenType TEXT NULL COLLATE NOCASE,
+	GenFile TEXT NULL COLLATE NOCASE,
+	Header1 TEXT NULL COLLATE NOCASE,
+	Header2 TEXT NULL COLLATE NOCASE,
+	Phase TEXT NULL COLLATE NOCASE,
+	Scope TEXT NULL COLLATE NOCASE,
+	GenOption TEXT NULL COLLATE NOCASE,
+	GenLinks TEXT NULL COLLATE NOCASE,
+	Classifier INTEGER NULL,
+	ea_guid TEXT NULL COLLATE NOCASE,
+	ParentID INTEGER NULL,
+	RunState TEXT NULL COLLATE NOCASE,
+	Classifier_guid TEXT NULL COLLATE NOCASE,
+	TPos INTEGER NULL,
+	IsRoot INTEGER NULL DEFAULT 0,
+	IsLeaf INTEGER NULL DEFAULT 0,
+	IsSpec INTEGER NULL DEFAULT 0,
+	IsActive INTEGER NULL DEFAULT 0,
+	StateFlags TEXT NULL COLLATE NOCASE,
+	PackageFlags TEXT NULL COLLATE NOCASE,
+	Multiplicity TEXT NULL COLLATE NOCASE,
+	StyleEx TEXT NULL COLLATE NOCASE,
+	ActionFlags TEXT NULL COLLATE NOCASE,
+	EventFlags TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_object VALUES(473,'Package',0,'Configuration','','','','',9,'MPMS Configuration',0,'1',0,NULL,-1,0,-1,-1,-1,'2022-10-14 11:42:13.2963835','2022-10-14 11:42:13.2963783',NULL,'0',0,'132',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,'Public',NULL,NULL,0,'{f753cac4-e9bd-4a77-a844-66a0d822b092}',0,NULL,NULL,0,0,0,0,0,NULL,NULL,NULL,NULL,'',NULL);
 INSERT INTO t_object VALUES(516,'Package',0,'Requirements','','dsiegl','1.0','',1,'',0,'1',0,NULL,-1,0,-1,-1,-1,'2022-10-07 08:52:53','2022-11-16 10:31:59','Proposed','0',0,'138',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Java',NULL,NULL,NULL,'1.0','Public',NULL,NULL,0,'{AB2F52EB-8C65-4a4c-BDBC-E77DB114C1C8}',0,NULL,NULL,1,0,0,0,0,NULL,NULL,NULL,NULL,'',NULL);
@@ -1677,69 +1677,69 @@ INSERT INTO t_object VALUES(1901,'Class',0,'{d3095554-4013-6b8a-8629-b582b167ca1
 INSERT INTO t_object VALUES(1902,'Class',0,'{84586B2D-2C36-4b5a-ACF1-7C4E07B731C0}','','','1.0','',439,'MPMS Model Dependency',0,'',0,NULL,-1,0,-1,-1,-1,'2025-08-01 11:36:59','2025-08-01 11:36:59','','0',0,NULL,NULL,NULL,'0',NULL,NULL,NULL,NULL,NULL,'','',NULL,NULL,'1.0','Public',NULL,NULL,0,'{696e4e17-8bc7-d56b-cfeb-e4a4bb27fd45}',0,NULL,NULL,0,0,0,0,0,NULL,NULL,NULL,'','',NULL);
 INSERT INTO t_object VALUES(1903,'Class',0,'Requirements','','','1.0','',439,'MPMS Dependency',0,'',0,NULL,-1,0,-1,-1,-1,'2025-08-01 11:36:59','2025-08-01 11:36:59','','0',0,NULL,NULL,NULL,'0',NULL,NULL,NULL,NULL,NULL,'','',NULL,NULL,'1.0','Public',NULL,NULL,0,'{df414273-02b0-ca1f-a484-9e14fa418d81}',0,NULL,NULL,0,0,0,0,0,NULL,NULL,NULL,'','',NULL);
 INSERT INTO t_object VALUES(1904,'Actor',0,'Actor3',NULL,'dsiegl','1.0',NULL,157,NULL,0,'1',0,NULL,-1,0,-1,-1,-1,'2025-08-04 09:23:58','2025-08-07 08:47:11','Proposed','0',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'<none>',NULL,NULL,NULL,'1.0','Public',NULL,NULL,0,'{A52BCDDA-F6CD-4e28-A839-65063697DE13}',0,NULL,NULL,NULL,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL);
-CREATE TABLE t_objectconstraint
-(
-	Object_ID INTEGER NOT NULL DEFAULT 0,
-	'Constraint' TEXT NOT NULL COLLATE NOCASE,
-	ConstraintType TEXT NOT NULL COLLATE NOCASE,
-	Weight REAL NULL DEFAULT 0,
-	Notes TEXT NULL COLLATE NOCASE,
-	Status TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_objectconstraint PRIMARY KEY (Object_ID,ConstraintType,'Constraint')
+CREATE TABLE t_objectconstraint
+(
+	Object_ID INTEGER NOT NULL DEFAULT 0,
+	'Constraint' TEXT NOT NULL COLLATE NOCASE,
+	ConstraintType TEXT NOT NULL COLLATE NOCASE,
+	Weight REAL NULL DEFAULT 0,
+	Notes TEXT NULL COLLATE NOCASE,
+	Status TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_objectconstraint PRIMARY KEY (Object_ID,ConstraintType,'Constraint')
 );
-CREATE TABLE t_objecteffort
-(
-	Object_ID INTEGER NOT NULL DEFAULT 0,
-	Effort TEXT NOT NULL COLLATE NOCASE,
-	EffortType TEXT NULL COLLATE NOCASE,
-	EValue REAL NULL DEFAULT 0,
-	Notes TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_objecteffort PRIMARY KEY (Object_ID,Effort)
+CREATE TABLE t_objecteffort
+(
+	Object_ID INTEGER NOT NULL DEFAULT 0,
+	Effort TEXT NOT NULL COLLATE NOCASE,
+	EffortType TEXT NULL COLLATE NOCASE,
+	EValue REAL NULL DEFAULT 0,
+	Notes TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_objecteffort PRIMARY KEY (Object_ID,Effort)
 );
-CREATE TABLE t_objectfiles
-(
-	Object_ID INTEGER NOT NULL DEFAULT 0,
-	FileName TEXT NOT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE,
-	Note TEXT NULL COLLATE NOCASE,
-	FileSize TEXT NULL COLLATE NOCASE,
-	FileDate TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_objectfiles PRIMARY KEY (Object_ID,FileName)
+CREATE TABLE t_objectfiles
+(
+	Object_ID INTEGER NOT NULL DEFAULT 0,
+	FileName TEXT NOT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE,
+	Note TEXT NULL COLLATE NOCASE,
+	FileSize TEXT NULL COLLATE NOCASE,
+	FileDate TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_objectfiles PRIMARY KEY (Object_ID,FileName)
 );
-CREATE TABLE t_objectmetrics
-(
-	Object_ID INTEGER NOT NULL DEFAULT 0,	-- Object metric applies to
-	Metric TEXT NOT NULL COLLATE NOCASE,
-	MetricType TEXT NULL COLLATE NOCASE,	-- Metric code
-	EValue REAL NULL DEFAULT 1,
-	Notes TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_objectmetrics PRIMARY KEY (Object_ID,Metric)
+CREATE TABLE t_objectmetrics
+(
+	Object_ID INTEGER NOT NULL DEFAULT 0,	-- Object metric applies to
+	Metric TEXT NOT NULL COLLATE NOCASE,
+	MetricType TEXT NULL COLLATE NOCASE,	-- Metric code
+	EValue REAL NULL DEFAULT 1,
+	Notes TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_objectmetrics PRIMARY KEY (Object_ID,Metric)
 );
-CREATE TABLE t_objectproblems
-(
-	Object_ID INTEGER NOT NULL DEFAULT 0,
-	Problem TEXT NOT NULL COLLATE NOCASE,
-	ProblemType TEXT NOT NULL COLLATE NOCASE,
-	DateReported TEXT NULL COLLATE NOCASE,
-	Status TEXT NULL COLLATE NOCASE,
-	ProblemNotes TEXT NULL COLLATE NOCASE,
-	ReportedBy TEXT NULL COLLATE NOCASE,
-	ResolvedBy TEXT NULL COLLATE NOCASE,
-	DateResolved TEXT NULL COLLATE NOCASE,
-	Version TEXT NULL COLLATE NOCASE,
-	ResolverNotes TEXT NULL COLLATE NOCASE,
-	Priority TEXT NULL COLLATE NOCASE,
-	Severity TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_objectproblems PRIMARY KEY (Object_ID,ProblemType,Problem)
+CREATE TABLE t_objectproblems
+(
+	Object_ID INTEGER NOT NULL DEFAULT 0,
+	Problem TEXT NOT NULL COLLATE NOCASE,
+	ProblemType TEXT NOT NULL COLLATE NOCASE,
+	DateReported TEXT NULL COLLATE NOCASE,
+	Status TEXT NULL COLLATE NOCASE,
+	ProblemNotes TEXT NULL COLLATE NOCASE,
+	ReportedBy TEXT NULL COLLATE NOCASE,
+	ResolvedBy TEXT NULL COLLATE NOCASE,
+	DateResolved TEXT NULL COLLATE NOCASE,
+	Version TEXT NULL COLLATE NOCASE,
+	ResolverNotes TEXT NULL COLLATE NOCASE,
+	Priority TEXT NULL COLLATE NOCASE,
+	Severity TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_objectproblems PRIMARY KEY (Object_ID,ProblemType,Problem)
 );
-CREATE TABLE t_objectproperties
-(
-	PropertyID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	Object_ID INTEGER NULL DEFAULT 0,
-	Property TEXT NULL COLLATE NOCASE,
-	Value TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	ea_guid TEXT NULL COLLATE NOCASE
+CREATE TABLE t_objectproperties
+(
+	PropertyID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Object_ID INTEGER NULL DEFAULT 0,
+	Property TEXT NULL COLLATE NOCASE,
+	Value TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	ea_guid TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_objectproperties VALUES(877,473,'MPMS Configuration.Repository Path','<memo>','bdBdIy9+8MARvQ5eq4ap7WNwHw3hJyNvx0Y1dz+6eNoz2Wk9iBMwayVfxXkx+4VZ78fIu0EVTdJbnxbEiN9vkQ8NqKml/EDZEFYxj+KpMmn3bDCWoksJF/xpNsqWFENQUrytdEwsK5Pk9IK08KA+Gw27MXKIgmlnRO374rhaUgnkoiFDAqqY6NhU0qcbj7V5xrUECEpesWooXHcvX/yf3Dy3MWi7B1pZF5AZbg921XbDgPrSw5/jnBbLriRUHZ0gGHtHGKslRYMYMTsdTP/lBljnEPYuXU6VEvb1/R6tnpMR1/qN9xbIzrCRZkwW3MX9WHzFopQJ+iQj6Jwgd5VQiZe8hqsCkXyJ8Y/eKnA/NGge9vXqYZrzROYdfsAKWpK1HXVN0kNjOBxc5Kv4qEkr/zcHUBJCfRCPkzrpNPK4EPgQYIqzSnKWrrmW+eUd4gdWG2I735YYkbF4In1nKSO50H+Lk1emhuF3bMlSm3CJZrAlYrg6NRs6tH91AIeCnV//z7QNA9ocZSFHNVQpO1S4/Ydz98ggdwkliCIbaNPi3XpCJvFfnPpYHwyTYA5n4nC2QsimfZ37KSt7sqMbIGxncpokL+J2GnRDm118l3oOZ113x2JWcnx5N0GCunlXxzb1PNIal4qhIgwJSODxm6K3JdyXewkOBrg280xPNuJV69N4wv/loYhveMjPgoeI1lx1RSM1hQNXoAYiiCU9zTep/qBUXp4uhb7ktqHphF1tMPHYX8CxFPSwYx1kHVD5+Ram2tuV+UuCoYLEy0fjkOdTwFelDw0rVs1CqAKegjM67D2KQhfQDLFaEkam9jlSa+f2VSFiTQFDFfHa6d51ayj4Awjjtzez50YqT3ywGQrQFo0LQRVO45uzDstsbpospm7atcinttoR2xG0VHScQyCcv4mnCh6AdyUXk6aoal6/4jfsI15SSpsHsHF+ZSO5YpTPYKH4p0DUAWILaRDwwDAsqUYaDd21GS47eHbrbWgV9U7uE7d9AD7SAqwhEmPoMBR1kPRwyDJdVBN7PVnRXbHNhOuZZTW7cAQDNTIrBkZahNQ=','{9fd51a05-46d1-5327-c440-f4f7bf1796ad}');
 INSERT INTO t_objectproperties VALUES(2630,923,'isEncapsulated',NULL,unistr('Values: true,false\u000d\u000a'),'{501B1315-B5D3-0eb5-A101-8D0264D6B201}');
@@ -2172,85 +2172,85 @@ INSERT INTO t_objectproperties VALUES(5760,1889,'source',NULL,NULL,'{145BFAB1-88
 INSERT INTO t_objectproperties VALUES(5761,1889,'risk',NULL,unistr('Values: High,Medium,Low\u000d\u000a'),'{00405119-65AE-0c65-9D7E-68AF8E621AAD}');
 INSERT INTO t_objectproperties VALUES(5762,1889,'verifyMethod',NULL,unistr('Values: Analysis,Demonstration,Inspection,Test\u000d\u000a'),'{4BA86CD6-324B-1132-8687-D5241FA3E8E5}');
 INSERT INTO t_objectproperties VALUES(5771,1900,'MPMS Package GUID','{d3095554-4013-6b8a-8629-b582b167ca1d}',NULL,'{2f89ce5f-2ea9-2e10-f6ad-4fefd0e26ac6}');
-CREATE TABLE t_objectrequires
-(
-	ReqID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	Object_ID INTEGER NULL DEFAULT 0,
-	Requirement TEXT NULL COLLATE NOCASE,
-	ReqType TEXT NULL COLLATE NOCASE,
-	Status TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	Stability TEXT NULL COLLATE NOCASE,
-	Difficulty TEXT NULL COLLATE NOCASE,
-	Priority TEXT NULL COLLATE NOCASE,
-	LastUpdate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE
+CREATE TABLE t_objectrequires
+(
+	ReqID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Object_ID INTEGER NULL DEFAULT 0,
+	Requirement TEXT NULL COLLATE NOCASE,
+	ReqType TEXT NULL COLLATE NOCASE,
+	Status TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	Stability TEXT NULL COLLATE NOCASE,
+	Difficulty TEXT NULL COLLATE NOCASE,
+	Priority TEXT NULL COLLATE NOCASE,
+	LastUpdate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE
 );
-CREATE TABLE t_objectresource
-(
-	Object_ID INTEGER NOT NULL DEFAULT 0,
-	Resource TEXT NOT NULL COLLATE NOCASE,
-	Role TEXT NOT NULL COLLATE NOCASE,
-	Time REAL NULL DEFAULT 0,
-	Notes TEXT NULL COLLATE NOCASE,
-	PercentComplete INTEGER NULL DEFAULT 0,
-	DateStart TEXT NULL COLLATE NOCASE,
-	DateEnd TEXT NULL COLLATE NOCASE,
-	History TEXT NULL COLLATE NOCASE,
-	ExpectedHours INTEGER NULL DEFAULT 0,
-	ActualHours INTEGER NULL DEFAULT 0,
-	CONSTRAINT pk_objectresource PRIMARY KEY (Object_ID,Resource,Role)
+CREATE TABLE t_objectresource
+(
+	Object_ID INTEGER NOT NULL DEFAULT 0,
+	Resource TEXT NOT NULL COLLATE NOCASE,
+	Role TEXT NOT NULL COLLATE NOCASE,
+	Time REAL NULL DEFAULT 0,
+	Notes TEXT NULL COLLATE NOCASE,
+	PercentComplete INTEGER NULL DEFAULT 0,
+	DateStart TEXT NULL COLLATE NOCASE,
+	DateEnd TEXT NULL COLLATE NOCASE,
+	History TEXT NULL COLLATE NOCASE,
+	ExpectedHours INTEGER NULL DEFAULT 0,
+	ActualHours INTEGER NULL DEFAULT 0,
+	CONSTRAINT pk_objectresource PRIMARY KEY (Object_ID,Resource,Role)
 );
-CREATE TABLE t_objectrisks
-(
-	Object_ID INTEGER NOT NULL DEFAULT 0,
-	Risk TEXT NOT NULL COLLATE NOCASE,
-	RiskType TEXT NULL COLLATE NOCASE,
-	EValue REAL NULL DEFAULT 0,
-	Notes TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_objectrisks PRIMARY KEY (Object_ID,Risk)
+CREATE TABLE t_objectrisks
+(
+	Object_ID INTEGER NOT NULL DEFAULT 0,
+	Risk TEXT NOT NULL COLLATE NOCASE,
+	RiskType TEXT NULL COLLATE NOCASE,
+	EValue REAL NULL DEFAULT 0,
+	Notes TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_objectrisks PRIMARY KEY (Object_ID,Risk)
 );
-CREATE TABLE t_objectscenarios
-(
-	Object_ID INTEGER NOT NULL DEFAULT 0,
-	Scenario TEXT NOT NULL COLLATE NOCASE,
-	ScenarioType TEXT NULL COLLATE NOCASE,
-	EValue REAL NULL DEFAULT 0,
-	Notes TEXT NULL COLLATE NOCASE,
-	XMLContent TEXT NULL COLLATE NOCASE,
-	ea_guid TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_objectscenarios PRIMARY KEY (Object_ID,Scenario)
+CREATE TABLE t_objectscenarios
+(
+	Object_ID INTEGER NOT NULL DEFAULT 0,
+	Scenario TEXT NOT NULL COLLATE NOCASE,
+	ScenarioType TEXT NULL COLLATE NOCASE,
+	EValue REAL NULL DEFAULT 0,
+	Notes TEXT NULL COLLATE NOCASE,
+	XMLContent TEXT NULL COLLATE NOCASE,
+	ea_guid TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_objectscenarios PRIMARY KEY (Object_ID,Scenario)
 );
-CREATE TABLE t_objecttests
-(
-	Object_ID INTEGER NOT NULL DEFAULT 0,
-	Test TEXT NOT NULL COLLATE NOCASE,
-	TestClass INTEGER NOT NULL DEFAULT 0,
-	TestType TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	InputData TEXT NULL COLLATE NOCASE,
-	AcceptanceCriteria TEXT NULL COLLATE NOCASE,
-	Status TEXT NULL COLLATE NOCASE,
-	DateRun TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
-	Results TEXT NULL COLLATE NOCASE,
-	RunBy TEXT NULL COLLATE NOCASE,
-	CheckBy TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_objecttests PRIMARY KEY (Object_ID,Test,TestClass)
+CREATE TABLE t_objecttests
+(
+	Object_ID INTEGER NOT NULL DEFAULT 0,
+	Test TEXT NOT NULL COLLATE NOCASE,
+	TestClass INTEGER NOT NULL DEFAULT 0,
+	TestType TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	InputData TEXT NULL COLLATE NOCASE,
+	AcceptanceCriteria TEXT NULL COLLATE NOCASE,
+	Status TEXT NULL COLLATE NOCASE,
+	DateRun TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
+	Results TEXT NULL COLLATE NOCASE,
+	RunBy TEXT NULL COLLATE NOCASE,
+	CheckBy TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_objecttests PRIMARY KEY (Object_ID,Test,TestClass)
 );
-CREATE TABLE t_objecttrx
-(
-	Object_ID INTEGER NOT NULL DEFAULT 0,
-	TRX TEXT NOT NULL COLLATE NOCASE,
-	TRXType TEXT NOT NULL COLLATE NOCASE,
-	Weight REAL NULL DEFAULT 0,
-	Notes TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_objecttrx PRIMARY KEY (Object_ID,TRXType,TRX)
+CREATE TABLE t_objecttrx
+(
+	Object_ID INTEGER NOT NULL DEFAULT 0,
+	TRX TEXT NOT NULL COLLATE NOCASE,
+	TRXType TEXT NOT NULL COLLATE NOCASE,
+	Weight REAL NULL DEFAULT 0,
+	Notes TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_objecttrx PRIMARY KEY (Object_ID,TRXType,TRX)
 );
-CREATE TABLE t_objecttypes
-(
-	Object_Type TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Description TEXT NULL COLLATE NOCASE,
-	DesignObject INTEGER NULL,
-	ImageID INTEGER NULL DEFAULT 0
+CREATE TABLE t_objecttypes
+(
+	Object_Type TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Description TEXT NULL COLLATE NOCASE,
+	DesignObject INTEGER NULL,
+	ImageID INTEGER NULL DEFAULT 0
 );
 INSERT INTO t_objecttypes VALUES('Action','Action',1,8);
 INSERT INTO t_objecttypes VALUES('ActionPin','ActionPin',1,8);
@@ -2332,109 +2332,109 @@ INSERT INTO t_objecttypes VALUES('UseCase','UseCase',0,7);
 INSERT INTO t_objecttypes VALUES('User','User',0,0);
 INSERT INTO t_objecttypes VALUES('Defect','Defect',1,8);
 INSERT INTO t_objecttypes VALUES('Test','Test',1,8);
-CREATE TABLE t_ocf
-(
-	ObjectType TEXT NULL COLLATE NOCASE,	-- Type of Object e.g Actor, UseCase, Class
-	ComplexityWeight REAL NULL DEFAULT 0
+CREATE TABLE t_ocf
+(
+	ObjectType TEXT NULL COLLATE NOCASE,	-- Type of Object e.g Actor, UseCase, Class
+	ComplexityWeight REAL NULL DEFAULT 0
 );
 INSERT INTO t_ocf VALUES('Actor',1.0);
 INSERT INTO t_ocf VALUES('UseCase',5.0);
-CREATE TABLE t_operation
-(
-	OperationID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	Object_ID INTEGER NULL DEFAULT 0,
-	Name TEXT NULL COLLATE NOCASE,
-	Scope TEXT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE,
-	ReturnArray TEXT NULL COLLATE NOCASE,
-	Stereotype TEXT NULL COLLATE NOCASE,
-	IsStatic TEXT NULL COLLATE NOCASE,
-	Concurrency TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	Behaviour TEXT NULL COLLATE NOCASE,
-	Abstract TEXT NULL COLLATE NOCASE,
-	GenOption TEXT NULL COLLATE NOCASE,
-	Synchronized TEXT NULL COLLATE NOCASE,
-	Pos INTEGER NULL,
-	Const INTEGER NULL,
-	Style TEXT NULL COLLATE NOCASE,
-	Pure INTEGER NULL DEFAULT 0,
-	Throws TEXT NULL COLLATE NOCASE,
-	Classifier TEXT NULL COLLATE NOCASE,
-	Code TEXT NULL COLLATE NOCASE,
-	IsRoot INTEGER NULL DEFAULT 0,
-	IsLeaf INTEGER NULL DEFAULT 0,
-	IsQuery INTEGER NULL DEFAULT 0,
-	StateFlags TEXT NULL COLLATE NOCASE,
-	ea_guid TEXT NULL COLLATE NOCASE,
-	StyleEx TEXT NULL COLLATE NOCASE
+CREATE TABLE t_operation
+(
+	OperationID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Object_ID INTEGER NULL DEFAULT 0,
+	Name TEXT NULL COLLATE NOCASE,
+	Scope TEXT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE,
+	ReturnArray TEXT NULL COLLATE NOCASE,
+	Stereotype TEXT NULL COLLATE NOCASE,
+	IsStatic TEXT NULL COLLATE NOCASE,
+	Concurrency TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	Behaviour TEXT NULL COLLATE NOCASE,
+	Abstract TEXT NULL COLLATE NOCASE,
+	GenOption TEXT NULL COLLATE NOCASE,
+	Synchronized TEXT NULL COLLATE NOCASE,
+	Pos INTEGER NULL,
+	Const INTEGER NULL,
+	Style TEXT NULL COLLATE NOCASE,
+	Pure INTEGER NULL DEFAULT 0,
+	Throws TEXT NULL COLLATE NOCASE,
+	Classifier TEXT NULL COLLATE NOCASE,
+	Code TEXT NULL COLLATE NOCASE,
+	IsRoot INTEGER NULL DEFAULT 0,
+	IsLeaf INTEGER NULL DEFAULT 0,
+	IsQuery INTEGER NULL DEFAULT 0,
+	StateFlags TEXT NULL COLLATE NOCASE,
+	ea_guid TEXT NULL COLLATE NOCASE,
+	StyleEx TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_operationparams
-(
-	OperationID INTEGER NOT NULL DEFAULT 0,
-	Name TEXT NOT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE,
-	'Default' TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	Pos INTEGER NULL DEFAULT 0,
-	Const INTEGER NULL,
-	Style TEXT NULL COLLATE NOCASE,
-	Kind TEXT NULL COLLATE NOCASE,
-	Classifier TEXT NULL COLLATE NOCASE,
-	ea_guid TEXT NULL COLLATE NOCASE,
-	StyleEx TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_operationparams PRIMARY KEY (OperationID,Name)
+CREATE TABLE t_operationparams
+(
+	OperationID INTEGER NOT NULL DEFAULT 0,
+	Name TEXT NOT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE,
+	'Default' TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	Pos INTEGER NULL DEFAULT 0,
+	Const INTEGER NULL,
+	Style TEXT NULL COLLATE NOCASE,
+	Kind TEXT NULL COLLATE NOCASE,
+	Classifier TEXT NULL COLLATE NOCASE,
+	ea_guid TEXT NULL COLLATE NOCASE,
+	StyleEx TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_operationparams PRIMARY KEY (OperationID,Name)
 );
-CREATE TABLE t_operationposts
-(
-	OperationID INTEGER NOT NULL DEFAULT 0,
-	PostCondition TEXT NOT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_operationposts PRIMARY KEY (OperationID,PostCondition)
+CREATE TABLE t_operationposts
+(
+	OperationID INTEGER NOT NULL DEFAULT 0,
+	PostCondition TEXT NOT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_operationposts PRIMARY KEY (OperationID,PostCondition)
 );
-CREATE TABLE t_operationpres
-(
-	OperationID INTEGER NOT NULL DEFAULT 0,
-	PreCondition TEXT NOT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_operationpres PRIMARY KEY (OperationID,PreCondition)
+CREATE TABLE t_operationpres
+(
+	OperationID INTEGER NOT NULL DEFAULT 0,
+	PreCondition TEXT NOT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_operationpres PRIMARY KEY (OperationID,PreCondition)
 );
-CREATE TABLE t_operationtag
-(
-	PropertyID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	ElementID INTEGER NULL DEFAULT 0,
-	Property TEXT NULL COLLATE NOCASE,
-	VALUE TEXT NULL COLLATE NOCASE,
-	NOTES TEXT NULL COLLATE NOCASE,
-	ea_guid TEXT NULL COLLATE NOCASE
+CREATE TABLE t_operationtag
+(
+	PropertyID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	ElementID INTEGER NULL DEFAULT 0,
+	Property TEXT NULL COLLATE NOCASE,
+	VALUE TEXT NULL COLLATE NOCASE,
+	NOTES TEXT NULL COLLATE NOCASE,
+	ea_guid TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_package
-(
-	Package_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	Name TEXT NULL COLLATE NOCASE,
-	Parent_ID INTEGER NULL DEFAULT 0,
-	CreatedDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
-	ModifiedDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	ea_guid TEXT NULL COLLATE NOCASE,
-	XMLPath TEXT NULL COLLATE NOCASE,
-	IsControlled INTEGER NULL DEFAULT 0,
-	LastLoadDate TEXT NULL COLLATE NOCASE,
-	LastSaveDate TEXT NULL COLLATE NOCASE,
-	Version TEXT NULL COLLATE NOCASE,
-	Protected INTEGER NULL DEFAULT 0,
-	PkgOwner TEXT NULL COLLATE NOCASE,
-	UMLVersion TEXT NULL COLLATE NOCASE,
-	UseDTD INTEGER NULL DEFAULT 0,
-	LogXML INTEGER NULL DEFAULT 0,
-	CodePath TEXT NULL COLLATE NOCASE,
-	Namespace TEXT NULL COLLATE NOCASE,
-	TPos INTEGER NULL,
-	PackageFlags TEXT NULL COLLATE NOCASE,
-	BatchSave INTEGER NULL,
-	BatchLoad INTEGER NULL
+CREATE TABLE t_package
+(
+	Package_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Name TEXT NULL COLLATE NOCASE,
+	Parent_ID INTEGER NULL DEFAULT 0,
+	CreatedDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
+	ModifiedDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	ea_guid TEXT NULL COLLATE NOCASE,
+	XMLPath TEXT NULL COLLATE NOCASE,
+	IsControlled INTEGER NULL DEFAULT 0,
+	LastLoadDate TEXT NULL COLLATE NOCASE,
+	LastSaveDate TEXT NULL COLLATE NOCASE,
+	Version TEXT NULL COLLATE NOCASE,
+	Protected INTEGER NULL DEFAULT 0,
+	PkgOwner TEXT NULL COLLATE NOCASE,
+	UMLVersion TEXT NULL COLLATE NOCASE,
+	UseDTD INTEGER NULL DEFAULT 0,
+	LogXML INTEGER NULL DEFAULT 0,
+	CodePath TEXT NULL COLLATE NOCASE,
+	Namespace TEXT NULL COLLATE NOCASE,
+	TPos INTEGER NULL,
+	PackageFlags TEXT NULL COLLATE NOCASE,
+	BatchSave INTEGER NULL,
+	BatchLoad INTEGER NULL
 );
 INSERT INTO t_package VALUES(1,'Model',0,'2012-04-17 00:01:01','2012-04-17 00:01:01','1','{A73A195A-2585-4fda-BF62-CCF6ABEE490A}','1',0,'2024-04-08 15:28:01','2012-04-17 00:01:01','1',0,'1','1',0,0,'1','1',1,'1',1,1);
 INSERT INTO t_package VALUES(9,'MPMS Specification and Configuration',0,'2022-05-23 23:47:50.0458818','2022-05-23 23:47:50.0458715','','{5BEEF931-53C8-4FE3-A607-71FACADE381B}',NULL,0,NULL,NULL,NULL,0,NULL,NULL,0,0,NULL,NULL,0,NULL,0,0);
@@ -2481,49 +2481,49 @@ INSERT INTO t_package VALUES(411,'System-Subsystem Architecture',398,'2022-09-06
 INSERT INTO t_package VALUES(412,'Documentation',0,'2024-05-02 13:30:09','2024-05-02 13:30:09',NULL,'{964B4244-9C16-48ee-97A0-C0ED69E6F038}',NULL,0,NULL,NULL,'1.0',0,NULL,NULL,0,0,NULL,NULL,NULL,'isModel=1;',NULL,NULL);
 INSERT INTO t_package VALUES(438,'DIAGRAMIMAGE',412,'2024-04-30 17:51:37','2024-05-02 13:31:50',NULL,'{9E823DCB-876D-4985-BE1A-2B141BDD120C}',NULL,0,NULL,NULL,'1.0',0,NULL,NULL,0,0,NULL,NULL,0,'isModel=1;VICON=3;',0,0);
 INSERT INTO t_package VALUES(439,'Use Cases [{d3095554-4013-6b8a-8629-b582b167ca1d}]',9,'2025-08-01 11:36:59','2025-08-01 11:36:59','','{7812f569-a3c4-54de-5091-08d6754ecee4}',NULL,0,NULL,NULL,NULL,0,NULL,NULL,0,0,NULL,NULL,0,NULL,0,0);
-CREATE TABLE t_palette
-(
-	PaletteID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	Name TEXT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE
+CREATE TABLE t_palette
+(
+	PaletteID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Name TEXT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_paletteitem
-(
-	PaletteID INTEGER NULL,
-	ItemID INTEGER NULL
+CREATE TABLE t_paletteitem
+(
+	PaletteID INTEGER NULL,
+	ItemID INTEGER NULL
 );
-CREATE TABLE t_phase
-(
-	PhaseID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	PhaseName TEXT NULL COLLATE NOCASE,
-	PhaseNotes TEXT NULL COLLATE NOCASE,
-	PhaseStyle TEXT NULL COLLATE NOCASE,
-	StartDate TEXT NULL COLLATE NOCASE,
-	EndDate TEXT NULL COLLATE NOCASE,
-	PhaseContent TEXT NULL COLLATE NOCASE
+CREATE TABLE t_phase
+(
+	PhaseID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	PhaseName TEXT NULL COLLATE NOCASE,
+	PhaseNotes TEXT NULL COLLATE NOCASE,
+	PhaseStyle TEXT NULL COLLATE NOCASE,
+	StartDate TEXT NULL COLLATE NOCASE,
+	EndDate TEXT NULL COLLATE NOCASE,
+	PhaseContent TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_primitives
-(
-	Datatype TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Description TEXT NULL COLLATE NOCASE
+CREATE TABLE t_primitives
+(
+	Datatype TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Description TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_problemtypes
-(
-	ProblemType TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Description TEXT NULL COLLATE NOCASE,
-	NumericWeight REAL NULL DEFAULT 1,
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_problemtypes
+(
+	ProblemType TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Description TEXT NULL COLLATE NOCASE,
+	NumericWeight REAL NULL DEFAULT 1,
+	Notes TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_problemtypes VALUES('HW','Hardware related',1.0,'1');
 INSERT INTO t_problemtypes VALUES('Network','Network problems',1.0,'Network issues');
 INSERT INTO t_problemtypes VALUES('Perform','Performance',1.5,'Performance related problems');
 INSERT INTO t_problemtypes VALUES('SW','Software',2.0,'Software related issues');
 INSERT INTO t_problemtypes VALUES('User','User caused problem',1.0,'Problems caused by user');
-CREATE TABLE t_projectroles
-(
-	Role TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Role name
-	Description TEXT NULL COLLATE NOCASE,	-- Description of the Role
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_projectroles
+(
+	Role TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Role name
+	Description TEXT NULL COLLATE NOCASE,	-- Description of the Role
+	Notes TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_projectroles VALUES('Application Analyst','Define and model the application structure','1');
 INSERT INTO t_projectroles VALUES('Business Analyst','Model business processes','1');
@@ -2534,18 +2534,18 @@ INSERT INTO t_projectroles VALUES('Project Manager','Manage schedule','Manage th
 INSERT INTO t_projectroles VALUES('Solution Architect','Lead Technical and Project Architect','Define and communicate application architecture');
 INSERT INTO t_projectroles VALUES('Use Case Modeller','Use Case modelling ','1');
 INSERT INTO t_projectroles VALUES('VB Programmer','Visual Basic Programming','1');
-CREATE TABLE t_propertytypes
-(
-	Property TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Description TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_propertytypes
+(
+	Property TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Description TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_requiretypes
-(
-	Requirement TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Requirement Code
-	Description TEXT NULL COLLATE NOCASE,	-- Description of requirement
-	NumericWeight REAL NULL DEFAULT 1,	-- Numeric factor to apply to metric - accepts decimal fractions
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_requiretypes
+(
+	Requirement TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Requirement Code
+	Description TEXT NULL COLLATE NOCASE,	-- Description of requirement
+	NumericWeight REAL NULL DEFAULT 1,	-- Numeric factor to apply to metric - accepts decimal fractions
+	Notes TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_requiretypes VALUES('Display','System will display in a specified format',1.0,'Information will be displayed in a particular way');
 INSERT INTO t_requiretypes VALUES('Functional','Functional Requirement',1.0,'Comments here');
@@ -2554,186 +2554,186 @@ INSERT INTO t_requiretypes VALUES('Printing','System printing requirement',1.0,'
 INSERT INTO t_requiretypes VALUES('Report','The system will roduce a report',1.0,'The system will have the facility to produce a report as required');
 INSERT INTO t_requiretypes VALUES('Testing','Testing requirement',1.600000000000000088,'Testing requirement');
 INSERT INTO t_requiretypes VALUES('Validate','Validate a particular rule',1.0,'The system will validate a specific rule as supplied in the business requirements');
-CREATE TABLE t_resources
-(
-	Name TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Organisation TEXT NULL COLLATE NOCASE,
-	Phone1 TEXT NULL COLLATE NOCASE,
-	Phone2 TEXT NULL COLLATE NOCASE,
-	Mobile TEXT NULL COLLATE NOCASE,
-	Fax TEXT NULL COLLATE NOCASE,
-	Email TEXT NULL COLLATE NOCASE,
-	Roles TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_resources
+(
+	Name TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Organisation TEXT NULL COLLATE NOCASE,
+	Phone1 TEXT NULL COLLATE NOCASE,
+	Phone2 TEXT NULL COLLATE NOCASE,
+	Mobile TEXT NULL COLLATE NOCASE,
+	Fax TEXT NULL COLLATE NOCASE,
+	Email TEXT NULL COLLATE NOCASE,
+	Roles TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_risktypes
-(
-	Risk TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Risk Code
-	Description TEXT NULL COLLATE NOCASE,	-- Description of Risk
-	NumericWeight REAL NULL DEFAULT 0,	-- Numeric factor to apply to metric - accepts decimal fractions
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_risktypes
+(
+	Risk TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Risk Code
+	Description TEXT NULL COLLATE NOCASE,	-- Description of Risk
+	NumericWeight REAL NULL DEFAULT 0,	-- Numeric factor to apply to metric - accepts decimal fractions
+	Notes TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_roleconstraint
-(
-	ConnectorID INTEGER NOT NULL DEFAULT 0,
-	'Constraint' TEXT NOT NULL COLLATE NOCASE,
-	ConnectorEnd TEXT NOT NULL COLLATE NOCASE,
-	ConstraintType TEXT NOT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_roleconstraint PRIMARY KEY (ConnectorID,'Constraint',ConnectorEnd,ConstraintType)
+CREATE TABLE t_roleconstraint
+(
+	ConnectorID INTEGER NOT NULL DEFAULT 0,
+	'Constraint' TEXT NOT NULL COLLATE NOCASE,
+	ConnectorEnd TEXT NOT NULL COLLATE NOCASE,
+	ConstraintType TEXT NOT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_roleconstraint PRIMARY KEY (ConnectorID,'Constraint',ConnectorEnd,ConstraintType)
 );
-CREATE TABLE t_rtf
-(
-	Type TEXT NULL COLLATE NOCASE,
-	Template TEXT NULL COLLATE NOCASE
+CREATE TABLE t_rtf
+(
+	Type TEXT NULL COLLATE NOCASE,
+	Template TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_rtfreport
-(
-	TemplateID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	RootPackage INTEGER NULL DEFAULT 0,
-	Filename TEXT NULL COLLATE NOCASE,
-	Details INTEGER NULL DEFAULT 0,
-	ProcessChildren INTEGER NULL DEFAULT 0,
-	ShowDiagrams INTEGER NULL DEFAULT 0,
-	Heading TEXT NULL COLLATE NOCASE,
-	Requirements INTEGER NULL DEFAULT 0,
-	Associations INTEGER NULL DEFAULT 0,
-	Scenarios INTEGER NULL DEFAULT 0,
-	ChildDiagrams INTEGER NULL DEFAULT 0,
-	Attributes INTEGER NULL DEFAULT 0,
-	Methods INTEGER NULL DEFAULT 0,
-	ImageType INTEGER NULL DEFAULT 0,
-	Paging INTEGER NULL DEFAULT 0,
-	Intro TEXT NULL COLLATE NOCASE,
-	Resources INTEGER NULL DEFAULT 1,
-	Constraints INTEGER NULL DEFAULT 1,
-	Tagged INTEGER NULL DEFAULT 0,
-	ShowTag INTEGER NULL DEFAULT 0,
-	ShowAlias INTEGER NULL DEFAULT 0,
-	PDATA1 TEXT NULL COLLATE NOCASE,
-	PDATA2 TEXT NULL COLLATE NOCASE,
-	PDATA3 TEXT NULL COLLATE NOCASE,
-	PDATA4 TEXT NULL COLLATE NOCASE
+CREATE TABLE t_rtfreport
+(
+	TemplateID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	RootPackage INTEGER NULL DEFAULT 0,
+	Filename TEXT NULL COLLATE NOCASE,
+	Details INTEGER NULL DEFAULT 0,
+	ProcessChildren INTEGER NULL DEFAULT 0,
+	ShowDiagrams INTEGER NULL DEFAULT 0,
+	Heading TEXT NULL COLLATE NOCASE,
+	Requirements INTEGER NULL DEFAULT 0,
+	Associations INTEGER NULL DEFAULT 0,
+	Scenarios INTEGER NULL DEFAULT 0,
+	ChildDiagrams INTEGER NULL DEFAULT 0,
+	Attributes INTEGER NULL DEFAULT 0,
+	Methods INTEGER NULL DEFAULT 0,
+	ImageType INTEGER NULL DEFAULT 0,
+	Paging INTEGER NULL DEFAULT 0,
+	Intro TEXT NULL COLLATE NOCASE,
+	Resources INTEGER NULL DEFAULT 1,
+	Constraints INTEGER NULL DEFAULT 1,
+	Tagged INTEGER NULL DEFAULT 0,
+	ShowTag INTEGER NULL DEFAULT 0,
+	ShowAlias INTEGER NULL DEFAULT 0,
+	PDATA1 TEXT NULL COLLATE NOCASE,
+	PDATA2 TEXT NULL COLLATE NOCASE,
+	PDATA3 TEXT NULL COLLATE NOCASE,
+	PDATA4 TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_rules
-(
-	RuleID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	RuleName TEXT NULL COLLATE NOCASE,
-	RuleType TEXT NULL COLLATE NOCASE,
-	RuleActive INTEGER NULL DEFAULT 0,
-	ErrorMsg TEXT NULL COLLATE NOCASE,
-	Flags TEXT NULL COLLATE NOCASE,
-	RuleOCL TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	RuleXML TEXT NULL COLLATE NOCASE
+CREATE TABLE t_rules
+(
+	RuleID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	RuleName TEXT NULL COLLATE NOCASE,
+	RuleType TEXT NULL COLLATE NOCASE,
+	RuleActive INTEGER NULL DEFAULT 0,
+	ErrorMsg TEXT NULL COLLATE NOCASE,
+	Flags TEXT NULL COLLATE NOCASE,
+	RuleOCL TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	RuleXML TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_scenariotypes
-(
-	ScenarioType TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- scenario code
-	Description TEXT NULL COLLATE NOCASE,	-- Description of scenario type
-	NumericWeight REAL NULL DEFAULT 1,	-- Numeric factor to apply to metric - accepts decimal fractions
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_scenariotypes
+(
+	ScenarioType TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- scenario code
+	Description TEXT NULL COLLATE NOCASE,	-- Description of scenario type
+	NumericWeight REAL NULL DEFAULT 1,	-- Numeric factor to apply to metric - accepts decimal fractions
+	Notes TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_scenariotypes VALUES('Alternate','Alternate pathway',1.0,'Path of execution that includes exceptional conditions.');
 INSERT INTO t_scenariotypes VALUES('Basic Path','Basic execution path',1.0,'The standard execution path with no exceptions');
 INSERT INTO t_scenariotypes VALUES('Simple','Standard scenario',1.0,'Used to describe ordinary usage');
-CREATE TABLE t_script
-(
-	ScriptID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	ScriptCategory TEXT NULL COLLATE NOCASE,
-	ScriptName TEXT NULL COLLATE NOCASE,
-	ScriptAuthor TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	Script TEXT NULL COLLATE NOCASE
+CREATE TABLE t_script
+(
+	ScriptID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	ScriptCategory TEXT NULL COLLATE NOCASE,
+	ScriptName TEXT NULL COLLATE NOCASE,
+	ScriptAuthor TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	Script TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_secgroup
-(
-	GroupID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	GroupName TEXT NULL COLLATE NOCASE,
-	Description TEXT NULL COLLATE NOCASE
+CREATE TABLE t_secgroup
+(
+	GroupID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	GroupName TEXT NULL COLLATE NOCASE,
+	Description TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_secgrouppermission
-(
-	GroupID TEXT NOT NULL COLLATE NOCASE,
-	PermissionID INTEGER NOT NULL DEFAULT 0,
-	CONSTRAINT pk_secgrouppermission PRIMARY KEY (GroupID,PermissionID)
+CREATE TABLE t_secgrouppermission
+(
+	GroupID TEXT NOT NULL COLLATE NOCASE,
+	PermissionID INTEGER NOT NULL DEFAULT 0,
+	CONSTRAINT pk_secgrouppermission PRIMARY KEY (GroupID,PermissionID)
 );
-CREATE TABLE t_seclocks
-(
-	UserID TEXT NULL COLLATE NOCASE,
-	GroupID TEXT NULL COLLATE NOCASE,
-	EntityType TEXT NULL COLLATE NOCASE,
-	EntityID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Timestamp TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
-	LockType TEXT NULL COLLATE NOCASE
+CREATE TABLE t_seclocks
+(
+	UserID TEXT NULL COLLATE NOCASE,
+	GroupID TEXT NULL COLLATE NOCASE,
+	EntityType TEXT NULL COLLATE NOCASE,
+	EntityID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Timestamp TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
+	LockType TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_secpermission
-(
-	PermissionID INTEGER NOT NULL PRIMARY KEY,
-	PermissionName TEXT NULL COLLATE NOCASE
+CREATE TABLE t_secpermission
+(
+	PermissionID INTEGER NOT NULL PRIMARY KEY,
+	PermissionName TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_secpolicies
-(
-	Property TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Value TEXT NULL COLLATE NOCASE
+CREATE TABLE t_secpolicies
+(
+	Property TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Value TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_secuser
-(
-	UserID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	UserLogin TEXT NULL COLLATE NOCASE,
-	FirstName TEXT NULL COLLATE NOCASE,
-	Surname TEXT NULL COLLATE NOCASE,
-	Department TEXT NULL COLLATE NOCASE,
-	Password TEXT NULL COLLATE NOCASE
+CREATE TABLE t_secuser
+(
+	UserID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	UserLogin TEXT NULL COLLATE NOCASE,
+	FirstName TEXT NULL COLLATE NOCASE,
+	Surname TEXT NULL COLLATE NOCASE,
+	Department TEXT NULL COLLATE NOCASE,
+	Password TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_secusergroup
-(
-	UserID TEXT NOT NULL COLLATE NOCASE,
-	GroupID TEXT NOT NULL COLLATE NOCASE,
-	CONSTRAINT pk_secusergroup PRIMARY KEY (UserID,GroupID)
+CREATE TABLE t_secusergroup
+(
+	UserID TEXT NOT NULL COLLATE NOCASE,
+	GroupID TEXT NOT NULL COLLATE NOCASE,
+	CONSTRAINT pk_secusergroup PRIMARY KEY (UserID,GroupID)
 );
-CREATE TABLE t_secuserpermission
-(
-	UserID TEXT NOT NULL COLLATE NOCASE,
-	PermissionID INTEGER NOT NULL DEFAULT 0,
-	CONSTRAINT pk_secuserpermission PRIMARY KEY (UserID,PermissionID)
+CREATE TABLE t_secuserpermission
+(
+	UserID TEXT NOT NULL COLLATE NOCASE,
+	PermissionID INTEGER NOT NULL DEFAULT 0,
+	CONSTRAINT pk_secuserpermission PRIMARY KEY (UserID,PermissionID)
 );
-CREATE TABLE t_snapshot
-(
-	SnapshotID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	SeriesID TEXT NULL COLLATE NOCASE,
-	Position INTEGER NULL DEFAULT 0,
-	SnapshotName TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	Style TEXT NULL COLLATE NOCASE,
-	ElementID TEXT NULL COLLATE NOCASE,
-	ElementType TEXT NULL COLLATE NOCASE,
-	StrContent TEXT NULL COLLATE NOCASE,
-	BinContent1 BLOB NULL,
-	BinContent2 BLOB NULL
+CREATE TABLE t_snapshot
+(
+	SnapshotID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	SeriesID TEXT NULL COLLATE NOCASE,
+	Position INTEGER NULL DEFAULT 0,
+	SnapshotName TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	Style TEXT NULL COLLATE NOCASE,
+	ElementID TEXT NULL COLLATE NOCASE,
+	ElementType TEXT NULL COLLATE NOCASE,
+	StrContent TEXT NULL COLLATE NOCASE,
+	BinContent1 BLOB NULL,
+	BinContent2 BLOB NULL
 );
-CREATE TABLE t_statustypes
-(
-	Status TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Description TEXT NULL COLLATE NOCASE
+CREATE TABLE t_statustypes
+(
+	Status TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Description TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_statustypes VALUES('Approved','Item is approved');
 INSERT INTO t_statustypes VALUES('Implemented','Finished');
 INSERT INTO t_statustypes VALUES('Mandatory','Required');
 INSERT INTO t_statustypes VALUES('Proposed','Item has been proposed');
 INSERT INTO t_statustypes VALUES('Validated','Approved and Checked');
-CREATE TABLE t_stereotypes
-(
-	Stereotype TEXT NOT NULL COLLATE NOCASE,
-	AppliesTo TEXT NOT NULL COLLATE NOCASE,
-	Description TEXT NULL COLLATE NOCASE,
-	MFEnabled INTEGER NULL,
-	MFPath TEXT NULL COLLATE NOCASE,
-	Metafile BLOB NULL,
-	Style TEXT NULL COLLATE NOCASE,
-	ea_guid TEXT NULL COLLATE NOCASE,
-	VisualType TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_stereotypes PRIMARY KEY (AppliesTo,Stereotype)
+CREATE TABLE t_stereotypes
+(
+	Stereotype TEXT NOT NULL COLLATE NOCASE,
+	AppliesTo TEXT NOT NULL COLLATE NOCASE,
+	Description TEXT NULL COLLATE NOCASE,
+	MFEnabled INTEGER NULL,
+	MFPath TEXT NULL COLLATE NOCASE,
+	Metafile BLOB NULL,
+	Style TEXT NULL COLLATE NOCASE,
+	ea_guid TEXT NULL COLLATE NOCASE,
+	VisualType TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_stereotypes PRIMARY KEY (AppliesTo,Stereotype)
 );
 INSERT INTO t_stereotypes VALUES('process','activity','A classifier whose instances represent a flow',0,'',NULL,'','{71810F48-CC41-4300-AD81-004FEDD0090B}','1');
 INSERT INTO t_stereotypes VALUES('subscribe','association','Source class will be notified when an event occurs in target',0,'',NULL,'','{5733A225-65B8-4cbe-A3D2-2D58A0EABF0B}','1');
@@ -5533,13 +5533,13 @@ INSERT INTO t_stereotypes VALUES('FLD','Package','FLD',0,NULL,NULL,NULL,'{339848
 INSERT INTO t_stereotypes VALUES('STK','Requirement','STK',0,NULL,NULL,NULL,'{4F2429B5-A01A-4ccc-883F-AE80640DAEB4}',NULL);
 INSERT INTO t_stereotypes VALUES('SYS','Requirement','SYS',0,NULL,NULL,NULL,'{658D44C8-CF68-4915-98D9-75AFFB240C0C}',NULL);
 INSERT INTO t_stereotypes VALUES('ARCH','Requirement','ARCH',0,NULL,NULL,NULL,'{03248F08-3228-42e1-877D-5BAD8A68E4B9}',NULL);
-CREATE TABLE t_taggedvalue
-(
-	PropertyID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	ElementID TEXT NULL COLLATE NOCASE,
-	BaseClass TEXT NULL COLLATE NOCASE,
-	TagValue TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_taggedvalue
+(
+	PropertyID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	ElementID TEXT NULL COLLATE NOCASE,
+	BaseClass TEXT NULL COLLATE NOCASE,
+	TagValue TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_taggedvalue VALUES('{A27F1A9D-6BBA-49b0-A2DC-AD0FAF395D83}','{550F6A21-C8EC-496e-9090-AB9CEF63F2FB}','PACKAGE','LastImportFileDate',NULL);
 INSERT INTO t_taggedvalue VALUES('{574DA75E-3FA2-435c-97D0-A30650CA08E8}','{5174722E-9461-46cf-819A-C37367850E8C}','PACKAGE','LastImportFileDate',NULL);
@@ -5548,31 +5548,31 @@ INSERT INTO t_taggedvalue VALUES('{856F0F3E-8145-43a2-8286-7471936AD834}','{DBA8
 INSERT INTO t_taggedvalue VALUES('{9D8B46FE-A285-4255-A69B-219EA6F99AD4}','{A23778A1-A8AA-491c-BBED-95181C57FB99}','PACKAGE','LastImportFileDate',NULL);
 INSERT INTO t_taggedvalue VALUES('{8F4D1DD6-2523-4cf1-B6F9-BA5A0ECF808B}','{89396D51-E49F-4067-9056-DE678528613D}','PACKAGE','LastImportFileDate',NULL);
 INSERT INTO t_taggedvalue VALUES('{01DA601E-E971-4e24-8309-94D990382C7A}','{A73A195A-2585-4fda-BF62-CCF6ABEE490A}','PACKAGE','LastImportFileDate',NULL);
-CREATE TABLE t_tasks
-(
-	TaskID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	Name TEXT NULL COLLATE NOCASE,
-	TaskType TEXT NULL COLLATE NOCASE,
-	NOTES TEXT NULL COLLATE NOCASE,
-	Priority TEXT NULL COLLATE NOCASE,
-	Status TEXT NULL COLLATE NOCASE,
-	Owner TEXT NULL COLLATE NOCASE,
-	StartDate TEXT NULL COLLATE NOCASE,
-	EndDate TEXT NULL COLLATE NOCASE,
-	Phase TEXT NULL COLLATE NOCASE,
-	History TEXT NULL COLLATE NOCASE,
-	Percent INTEGER NULL,
-	TotalTime INTEGER NULL,
-	ActualTime INTEGER NULL,
-	AssignedTo TEXT NULL COLLATE NOCASE
+CREATE TABLE t_tasks
+(
+	TaskID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Name TEXT NULL COLLATE NOCASE,
+	TaskType TEXT NULL COLLATE NOCASE,
+	NOTES TEXT NULL COLLATE NOCASE,
+	Priority TEXT NULL COLLATE NOCASE,
+	Status TEXT NULL COLLATE NOCASE,
+	Owner TEXT NULL COLLATE NOCASE,
+	StartDate TEXT NULL COLLATE NOCASE,
+	EndDate TEXT NULL COLLATE NOCASE,
+	Phase TEXT NULL COLLATE NOCASE,
+	History TEXT NULL COLLATE NOCASE,
+	Percent INTEGER NULL,
+	TotalTime INTEGER NULL,
+	ActualTime INTEGER NULL,
+	AssignedTo TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_tcf
-(
-	TCFID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Technical Factor Code
-	Description TEXT NULL COLLATE NOCASE,	-- Description of TCF
-	Weight REAL NULL DEFAULT 1,	-- Weighting
-	Value REAL NULL DEFAULT 0,
-	Notes TEXT NULL COLLATE NOCASE	-- Comment
+CREATE TABLE t_tcf
+(
+	TCFID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Technical Factor Code
+	Description TEXT NULL COLLATE NOCASE,	-- Description of TCF
+	Weight REAL NULL DEFAULT 1,	-- Weighting
+	Value REAL NULL DEFAULT 0,
+	Notes TEXT NULL COLLATE NOCASE	-- Comment
 );
 INSERT INTO t_tcf VALUES('TCF01','Distributed System',2.0,5.0,'1');
 INSERT INTO t_tcf VALUES('TCF02','Response or throughput performance objectives',1.0,4.0,'1');
@@ -5587,87 +5587,87 @@ INSERT INTO t_tcf VALUES('TCF10','Concurrent',1.0,2.0,'1');
 INSERT INTO t_tcf VALUES('TCF11','Includ special security features',1.0,2.0,'1');
 INSERT INTO t_tcf VALUES('TCF12','Provide direct access for third parties',1.0,5.0,'1');
 INSERT INTO t_tcf VALUES('TCF13','Special user training faciities are required',1.0,3.0,'1');
-CREATE TABLE t_template
-(
-	TemplateID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	TemplateType TEXT NULL COLLATE NOCASE,
-	TemplateName TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	Style TEXT NULL COLLATE NOCASE,
-	Template TEXT NULL COLLATE NOCASE
+CREATE TABLE t_template
+(
+	TemplateID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	TemplateType TEXT NULL COLLATE NOCASE,
+	TemplateName TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	Style TEXT NULL COLLATE NOCASE,
+	Template TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_testclass
-(
-	TestClass TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Description TEXT NULL COLLATE NOCASE
+CREATE TABLE t_testclass
+(
+	TestClass TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Description TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_testplans
-(
-	PlanID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Category TEXT NULL COLLATE NOCASE,
-	Name TEXT NULL COLLATE NOCASE,
-	Author TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	TestPlan TEXT NULL COLLATE NOCASE
+CREATE TABLE t_testplans
+(
+	PlanID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Category TEXT NULL COLLATE NOCASE,
+	Name TEXT NULL COLLATE NOCASE,
+	Author TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	TestPlan TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_testtypes
-(
-	TestType TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Test Type code
-	Description TEXT NULL COLLATE NOCASE,
-	NumericWeight REAL NULL DEFAULT 1,	-- Numeric factor to apply to metric - accepts decimal fractions
-	Notes TEXT NULL COLLATE NOCASE
+CREATE TABLE t_testtypes
+(
+	TestType TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,	-- Test Type code
+	Description TEXT NULL COLLATE NOCASE,
+	NumericWeight REAL NULL DEFAULT 1,	-- Numeric factor to apply to metric - accepts decimal fractions
+	Notes TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_testtypes VALUES('Load','Performance under load',1.0,'Stress testing');
 INSERT INTO t_testtypes VALUES('Regression','Regression Testing',1.0,'Regression');
 INSERT INTO t_testtypes VALUES('Standard','Simple Test procedure',1.0,'Used to test basic path');
-CREATE TABLE t_trxtypes
-(
-	Description TEXT NULL COLLATE NOCASE,	-- Description of transaction type
-	NumericWeight REAL NULL DEFAULT 1,	-- Numeric factor to apply to metric - accepts decimal fractions
-	Notes TEXT NULL COLLATE NOCASE,
-	TRX TEXT NULL COLLATE NOCASE,
-	TRX_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,	-- Transaction ID
-	Style TEXT NULL COLLATE NOCASE
+CREATE TABLE t_trxtypes
+(
+	Description TEXT NULL COLLATE NOCASE,	-- Description of transaction type
+	NumericWeight REAL NULL DEFAULT 1,	-- Numeric factor to apply to metric - accepts decimal fractions
+	Notes TEXT NULL COLLATE NOCASE,
+	TRX TEXT NULL COLLATE NOCASE,
+	TRX_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,	-- Transaction ID
+	Style TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_umlpattern
-(
-	PatternID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	PatternCategory TEXT NULL COLLATE NOCASE,
-	PatternName TEXT NULL COLLATE NOCASE,
-	Style TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	PatternXML TEXT NULL COLLATE NOCASE,
-	Version TEXT NULL COLLATE NOCASE
+CREATE TABLE t_umlpattern
+(
+	PatternID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	PatternCategory TEXT NULL COLLATE NOCASE,
+	PatternName TEXT NULL COLLATE NOCASE,
+	Style TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	PatternXML TEXT NULL COLLATE NOCASE,
+	Version TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE t_version
-(
-	ElementID TEXT NOT NULL COLLATE NOCASE,
-	VersionID TEXT NOT NULL COLLATE NOCASE,
-	ElementType TEXT NULL COLLATE NOCASE,
-	Flags TEXT NULL COLLATE NOCASE,
-	ExternalFile TEXT NULL COLLATE NOCASE,
-	Notes TEXT NULL COLLATE NOCASE,
-	Owner TEXT NULL COLLATE NOCASE,
-	VersionDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
-	Branch TEXT NULL COLLATE NOCASE,
-	ElementXML TEXT NULL COLLATE NOCASE,
-	CONSTRAINT pk_version PRIMARY KEY (ElementID,VersionID)
+CREATE TABLE t_version
+(
+	ElementID TEXT NOT NULL COLLATE NOCASE,
+	VersionID TEXT NOT NULL COLLATE NOCASE,
+	ElementType TEXT NULL COLLATE NOCASE,
+	Flags TEXT NULL COLLATE NOCASE,
+	ExternalFile TEXT NULL COLLATE NOCASE,
+	Notes TEXT NULL COLLATE NOCASE,
+	Owner TEXT NULL COLLATE NOCASE,
+	VersionDate TEXT NULL DEFAULT (datetime('now','localtime')) COLLATE NOCASE,
+	Branch TEXT NULL COLLATE NOCASE,
+	ElementXML TEXT NULL COLLATE NOCASE,
+	CONSTRAINT pk_version PRIMARY KEY (ElementID,VersionID)
 );
-CREATE TABLE t_xref
-(
-	XrefID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Name TEXT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE,
-	Visibility TEXT NULL COLLATE NOCASE,
-	Namespace TEXT NULL COLLATE NOCASE,
-	Requirement TEXT NULL COLLATE NOCASE,
-	'Constraint' TEXT NULL COLLATE NOCASE,
-	Behavior TEXT NULL COLLATE NOCASE,
-	'Partition' TEXT NULL COLLATE NOCASE,
-	Description TEXT NULL COLLATE NOCASE,
-	Client TEXT NULL COLLATE NOCASE,
-	Supplier TEXT NULL COLLATE NOCASE,
-	Link TEXT NULL COLLATE NOCASE
+CREATE TABLE t_xref
+(
+	XrefID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Name TEXT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE,
+	Visibility TEXT NULL COLLATE NOCASE,
+	Namespace TEXT NULL COLLATE NOCASE,
+	Requirement TEXT NULL COLLATE NOCASE,
+	'Constraint' TEXT NULL COLLATE NOCASE,
+	Behavior TEXT NULL COLLATE NOCASE,
+	'Partition' TEXT NULL COLLATE NOCASE,
+	Description TEXT NULL COLLATE NOCASE,
+	Client TEXT NULL COLLATE NOCASE,
+	Supplier TEXT NULL COLLATE NOCASE,
+	Link TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_xref VALUES('{1d116753-faf0-4f46-9813-f8b35a1ef8f6}','ProlaborateServerURL','ProlaborateServer',NULL,NULL,NULL,NULL,NULL,NULL,'<Configuration URL="llpcs.westeurope.cloudapp.azure.com" RepositoryGUID="1148e788-082f-4c8b-95f9-c7a27f74dcdf" Protocol="http://" ShowSummaryWindow="False" client_id="ProlaborateAddin" client_secret="vty4yKmn8jZY9aczj5sfTHqCraXhv2poRha9DPHX" /><Discussion Low = *False* Medium = *False* High = *False* Open = *False* Closed = *False* ShowDiscussionsOnDiagram = *False*/>',NULL,NULL,NULL);
 INSERT INTO t_xref VALUES('{C2B812B0-EB67-46a8-9CD1-EFAEA5D6DD92}','MOFProps','connector property','Public',NULL,NULL,NULL,'extensionLocation','0','-1;0;0','{1039802A-673D-4a2b-A9A0-C8246DBEBDA7}','<none>',NULL);
@@ -5845,49 +5845,49 @@ INSERT INTO t_xref VALUES('{8b42082c-9b9d-5435-7e9f-99065a7a1009}','Stereotypes'
 INSERT INTO t_xref VALUES('{c7a64823-df82-0a94-49ae-14a7bc6abc02}','Stereotypes','element property','Public',NULL,NULL,NULL,NULL,'0','@STEREO;Name=MPMS Spec Metadata;GUID={a81560c2-4888-7147-a2a7-90e3a8ec934d};@ENDSTEREO;','{9d6cf570-3eb6-aec3-7891-924cb9dbd163}','<none>',NULL);
 INSERT INTO t_xref VALUES('{c377a1eb-2891-3460-08f2-623844d588d4}','Stereotypes','element property','Public',NULL,NULL,NULL,NULL,'0','@STEREO;Name=MPMS Model Dependency;GUID={e84eb4c8-5415-e9e8-fcdd-096713c4d576};@ENDSTEREO;','{696e4e17-8bc7-d56b-cfeb-e4a4bb27fd45}','<none>',NULL);
 INSERT INTO t_xref VALUES('{bc09c08f-6cd9-3a4f-3b83-974f962dab0e}','Stereotypes','element property','Public',NULL,NULL,NULL,NULL,'0','@STEREO;Name=MPMS Dependency;GUID={98bced8a-4176-3865-4070-c9a60e1a9b1c};@ENDSTEREO;','{df414273-02b0-ca1f-a484-9e14fa418d81}','<none>',NULL);
-CREATE TABLE t_xrefsystem
-(
-	XrefID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	ToolID TEXT NULL COLLATE NOCASE,
-	Name TEXT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE,
-	Visibility TEXT NULL COLLATE NOCASE,
-	Namespace TEXT NULL COLLATE NOCASE,
-	Requirement TEXT NULL COLLATE NOCASE,
-	'Constraint' TEXT NULL COLLATE NOCASE,
-	Behavior TEXT NULL COLLATE NOCASE,
-	'Partition' TEXT NULL COLLATE NOCASE,
-	Description TEXT NULL COLLATE NOCASE,
-	Client TEXT NULL COLLATE NOCASE,
-	Supplier TEXT NULL COLLATE NOCASE,
-	Link TEXT NULL COLLATE NOCASE
+CREATE TABLE t_xrefsystem
+(
+	XrefID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	ToolID TEXT NULL COLLATE NOCASE,
+	Name TEXT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE,
+	Visibility TEXT NULL COLLATE NOCASE,
+	Namespace TEXT NULL COLLATE NOCASE,
+	Requirement TEXT NULL COLLATE NOCASE,
+	'Constraint' TEXT NULL COLLATE NOCASE,
+	Behavior TEXT NULL COLLATE NOCASE,
+	'Partition' TEXT NULL COLLATE NOCASE,
+	Description TEXT NULL COLLATE NOCASE,
+	Client TEXT NULL COLLATE NOCASE,
+	Supplier TEXT NULL COLLATE NOCASE,
+	Link TEXT NULL COLLATE NOCASE
 );
 INSERT INTO t_xrefsystem VALUES('{6E5FED3A-DF6C-40db-BEEC-4528AB8C8A2E}','1','Model Views','PView','1','8','1','1','1','1','1','0','ModelRoot','NULL');
-CREATE TABLE t_xrefuser
-(
-	XrefID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	ToolID TEXT NULL COLLATE NOCASE,
-	Name TEXT NULL COLLATE NOCASE,
-	Type TEXT NULL COLLATE NOCASE,
-	Visibility TEXT NULL COLLATE NOCASE,
-	Namespace TEXT NULL COLLATE NOCASE,
-	Requirement TEXT NULL COLLATE NOCASE,
-	'Constraint' TEXT NULL COLLATE NOCASE,
-	Behavior TEXT NULL COLLATE NOCASE,
-	'Partition' TEXT NULL COLLATE NOCASE,
-	Description TEXT NULL COLLATE NOCASE,
-	Client TEXT NULL COLLATE NOCASE,
-	Supplier TEXT NULL COLLATE NOCASE,
-	Link TEXT NULL COLLATE NOCASE
+CREATE TABLE t_xrefuser
+(
+	XrefID TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	ToolID TEXT NULL COLLATE NOCASE,
+	Name TEXT NULL COLLATE NOCASE,
+	Type TEXT NULL COLLATE NOCASE,
+	Visibility TEXT NULL COLLATE NOCASE,
+	Namespace TEXT NULL COLLATE NOCASE,
+	Requirement TEXT NULL COLLATE NOCASE,
+	'Constraint' TEXT NULL COLLATE NOCASE,
+	Behavior TEXT NULL COLLATE NOCASE,
+	'Partition' TEXT NULL COLLATE NOCASE,
+	Description TEXT NULL COLLATE NOCASE,
+	Client TEXT NULL COLLATE NOCASE,
+	Supplier TEXT NULL COLLATE NOCASE,
+	Link TEXT NULL COLLATE NOCASE
 );
-CREATE TABLE usys_schema
-(
-	V1558 TEXT NOT NULL COLLATE NOCASE PRIMARY KEY
+CREATE TABLE usys_schema
+(
+	V1558 TEXT NOT NULL COLLATE NOCASE PRIMARY KEY
 );
-CREATE TABLE usys_system
-(
-	Property TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	Value TEXT NULL COLLATE NOCASE
+CREATE TABLE usys_system
+(
+	Property TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	Value TEXT NULL COLLATE NOCASE
 );
 INSERT INTO usys_system VALUES('310_Category','1');
 INSERT INTO usys_system VALUES('310_Columns','1');
@@ -5986,26 +5986,26 @@ INSERT INTO usys_system VALUES('EA1310Updates','1');
 INSERT INTO usys_system VALUES('Integration-Enable','1');
 INSERT INTO usys_system VALUES('TransAllowEdit','1');
 INSERT INTO usys_system VALUES('TransAuto','0');
-CREATE TABLE usysOldTables
-(
-	TableName TEXT NULL COLLATE NOCASE,
-	NewName TEXT NULL COLLATE NOCASE,
-	RelOrder INTEGER NULL DEFAULT 0,
-	FixCode INTEGER NULL
+CREATE TABLE usysOldTables
+(
+	TableName TEXT NULL COLLATE NOCASE,
+	NewName TEXT NULL COLLATE NOCASE,
+	RelOrder INTEGER NULL DEFAULT 0,
+	FixCode INTEGER NULL
 );
-CREATE TABLE usysQueries
-(
-	QueryName TEXT NULL COLLATE NOCASE,
-	NewName TEXT NULL COLLATE NOCASE,
-	FixCode INTEGER NULL
+CREATE TABLE usysQueries
+(
+	QueryName TEXT NULL COLLATE NOCASE,
+	NewName TEXT NULL COLLATE NOCASE,
+	FixCode INTEGER NULL
 );
-CREATE TABLE usysTables
-(
-	TableName TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
-	RelOrder INTEGER NULL DEFAULT 0,
-	DisplayName TEXT NULL COLLATE NOCASE,
-	FromVer TEXT NULL COLLATE NOCASE,
-	ToVer TEXT NULL COLLATE NOCASE
+CREATE TABLE usysTables
+(
+	TableName TEXT NOT NULL COLLATE NOCASE PRIMARY KEY,
+	RelOrder INTEGER NULL DEFAULT 0,
+	DisplayName TEXT NULL COLLATE NOCASE,
+	FromVer TEXT NULL COLLATE NOCASE,
+	ToVer TEXT NULL COLLATE NOCASE
 );
 INSERT INTO usysTables VALUES('t_attribute',6,'Object Attributes','1.1.0','9.9.9');
 INSERT INTO usysTables VALUES('t_attributeconstraints',7,'Attribute Constraints','1.1.0','9.9.9');
@@ -6101,6 +6101,15 @@ INSERT INTO usysTables VALUES('t_xref',7,'XRef','3.1.0','9.9.9');
 INSERT INTO usysTables VALUES('t_xrefsystem',7,'System XRef','3.5.0','9.9.9');
 INSERT INTO usysTables VALUES('t_xrefuser',7,'User XRef','3.5.0','9.9.9');
 INSERT INTO usysTables VALUES('usys_system',7,'System Settings','3.1.0','9.9.9');
+INSERT INTO sqlite_sequence VALUES('t_attribute',884);
+INSERT INTO sqlite_sequence VALUES('t_connector',854);
+INSERT INTO sqlite_sequence VALUES('t_datatypes',831);
+INSERT INTO sqlite_sequence VALUES('t_diagram',108);
+INSERT INTO sqlite_sequence VALUES('t_diagramlinks',765);
+INSERT INTO sqlite_sequence VALUES('t_diagramobjects',874);
+INSERT INTO sqlite_sequence VALUES('t_object',1904);
+INSERT INTO sqlite_sequence VALUES('t_objectproperties',5771);
+INSERT INTO sqlite_sequence VALUES('t_package',439);
 INSERT INTO sqlite_sequence VALUES('t_datatypes',831);
 INSERT INTO sqlite_sequence VALUES('t_package',439);
 INSERT INTO sqlite_sequence VALUES('t_object',1904);
@@ -6114,317 +6123,317 @@ INSERT INTO sqlite_sequence VALUES('t_operation',30);
 INSERT INTO sqlite_sequence VALUES('t_attributetag',3);
 INSERT INTO sqlite_sequence VALUES('t_operationtag',16);
 INSERT INTO sqlite_sequence VALUES('t_connectortag',213);
-CREATE INDEX ix_attribute_classifier
+CREATE INDEX ix_attribute_classifier
  ON t_attribute (Classifier ASC);
-CREATE INDEX ix_attribute_name
+CREATE INDEX ix_attribute_name
  ON t_attribute (Name ASC);
-CREATE INDEX ix_attribute_objectid
+CREATE INDEX ix_attribute_objectid
  ON t_attribute (Object_ID ASC);
-CREATE INDEX ix_attribute_type
+CREATE INDEX ix_attribute_type
  ON t_attribute (Type ASC);
-CREATE UNIQUE INDEX uq_attribute_eaguid
+CREATE UNIQUE INDEX uq_attribute_eaguid
  ON t_attribute (ea_guid ASC);
-CREATE INDEX ix_attributeconstraints_objid
+CREATE INDEX ix_attributeconstraints_objid
  ON t_attributeconstraints (Object_ID ASC);
-CREATE INDEX ix_attributetag_eaguid
+CREATE INDEX ix_attributetag_eaguid
  ON t_attributetag (ea_guid ASC);
-CREATE INDEX ix_attributetag_elementid
+CREATE INDEX ix_attributetag_elementid
  ON t_attributetag (ElementID ASC);
-CREATE INDEX ix_attributetag_elementidprop
+CREATE INDEX ix_attributetag_elementidprop
  ON t_attributetag (ElementID ASC,Property ASC);
-CREATE INDEX ix_attributetag_property
+CREATE INDEX ix_attributetag_property
  ON t_attributetag (Property ASC);
-CREATE INDEX ix_attributetag_value
+CREATE INDEX ix_attributetag_value
  ON t_attributetag (VALUE ASC);
-CREATE INDEX ix_complexitytypes_numweight
+CREATE INDEX ix_complexitytypes_numweight
  ON t_complexitytypes (NumericWeight ASC);
-CREATE INDEX ix_connector_connectortype
+CREATE INDEX ix_connector_connectortype
  ON t_connector (Connector_Type ASC);
-CREATE INDEX ix_connector_diagramid
+CREATE INDEX ix_connector_diagramid
  ON t_connector (DiagramID ASC);
-CREATE INDEX ix_connector_endobjectid
+CREATE INDEX ix_connector_endobjectid
  ON t_connector (End_Object_ID ASC);
-CREATE INDEX ix_connector_endobjidconnid
+CREATE INDEX ix_connector_endobjidconnid
  ON t_connector (End_Object_ID ASC,Connector_ID ASC);
-CREATE INDEX ix_connector_pdata1
+CREATE INDEX ix_connector_pdata1
  ON t_connector (PDATA1 ASC);
-CREATE INDEX ix_connector_pdata3
+CREATE INDEX ix_connector_pdata3
  ON t_connector (PDATA3 ASC);
-CREATE INDEX ix_connector_pdata5
+CREATE INDEX ix_connector_pdata5
  ON t_connector (PDATA5 ASC);
-CREATE INDEX ix_connector_seqno
+CREATE INDEX ix_connector_seqno
  ON t_connector (SeqNo ASC);
-CREATE INDEX ix_connector_startobjectid
+CREATE INDEX ix_connector_startobjectid
  ON t_connector (Start_Object_ID ASC);
-CREATE INDEX ix_connector_startobjidconnid
+CREATE INDEX ix_connector_startobjidconnid
  ON t_connector (Start_Object_ID ASC,Connector_ID ASC);
-CREATE INDEX ix_connector_subtype
+CREATE INDEX ix_connector_subtype
  ON t_connector (SubType ASC);
-CREATE UNIQUE INDEX uq_connector_eaguid
+CREATE UNIQUE INDEX uq_connector_eaguid
  ON t_connector (ea_guid ASC);
-CREATE INDEX ix_connectorconstraint_connid
+CREATE INDEX ix_connectorconstraint_connid
  ON t_connectorconstraint (ConnectorID ASC);
-CREATE INDEX ix_connectorconstraint_constr
+CREATE INDEX ix_connectorconstraint_constr
  ON t_connectorconstraint ('Constraint' ASC);
-CREATE INDEX ix_connectortag_eaguid
+CREATE INDEX ix_connectortag_eaguid
  ON t_connectortag (ea_guid ASC);
-CREATE INDEX ix_connectortag_elementid
+CREATE INDEX ix_connectortag_elementid
  ON t_connectortag (ElementID ASC);
-CREATE INDEX ix_connectortag_property
+CREATE INDEX ix_connectortag_property
  ON t_connectortag (Property ASC);
-CREATE INDEX ix_connectortag_value
+CREATE INDEX ix_connectortag_value
  ON t_connectortag (VALUE ASC);
-CREATE INDEX ix_datatypes_datatype
+CREATE INDEX ix_datatypes_datatype
  ON t_datatypes (DataType ASC);
-CREATE INDEX ix_datatypes_productname
+CREATE INDEX ix_datatypes_productname
  ON t_datatypes (ProductName ASC);
-CREATE INDEX ix_diagram_diagramtype
+CREATE INDEX ix_diagram_diagramtype
  ON t_diagram (Diagram_Type ASC);
-CREATE INDEX ix_diagram_packageid
+CREATE INDEX ix_diagram_packageid
  ON t_diagram (Package_ID ASC);
-CREATE INDEX ix_diagram_parentid
+CREATE INDEX ix_diagram_parentid
  ON t_diagram (ParentID ASC);
-CREATE UNIQUE INDEX uq_diagram_eaguid
+CREATE UNIQUE INDEX uq_diagram_eaguid
  ON t_diagram (ea_guid ASC);
-CREATE INDEX ix_diagramlinks_connectorid
+CREATE INDEX ix_diagramlinks_connectorid
  ON t_diagramlinks (ConnectorID ASC);
-CREATE INDEX ix_diagramlinks_diagramid
+CREATE INDEX ix_diagramlinks_diagramid
  ON t_diagramlinks (DiagramID ASC);
-CREATE INDEX ix_diagramobjects_diagramid
+CREATE INDEX ix_diagramobjects_diagramid
  ON t_diagramobjects (Diagram_ID ASC);
-CREATE INDEX ix_diagramobjects_objectid
+CREATE INDEX ix_diagramobjects_objectid
  ON t_diagramobjects (Object_ID ASC);
-CREATE INDEX ix_diagramobjects_sequence
+CREATE INDEX ix_diagramobjects_sequence
  ON t_diagramobjects (Sequence ASC);
-CREATE INDEX ix_diagramtypes_packageid
+CREATE INDEX ix_diagramtypes_packageid
  ON t_diagramtypes (Package_ID ASC);
-CREATE INDEX ix_document_author
+CREATE INDEX ix_document_author
  ON t_document (Author ASC);
-CREATE INDEX ix_document_doctype
+CREATE INDEX ix_document_doctype
  ON t_document (DocType ASC);
-CREATE INDEX ix_document_elementid
+CREATE INDEX ix_document_elementid
  ON t_document (ElementID ASC);
-CREATE INDEX ix_document_style
+CREATE INDEX ix_document_style
  ON t_document (Style ASC);
-CREATE INDEX ix_document_version
+CREATE INDEX ix_document_version
  ON t_document (Version ASC);
-CREATE INDEX ix_ecf_weight
+CREATE INDEX ix_ecf_weight
  ON t_ecf (Weight ASC);
-CREATE INDEX ix_efforttypes_numericweight
+CREATE INDEX ix_efforttypes_numericweight
  ON t_efforttypes (NumericWeight ASC);
-CREATE INDEX ix_files_appliesto
+CREATE INDEX ix_files_appliesto
  ON t_files (AppliesTo ASC);
-CREATE INDEX ix_files_appliestoname
+CREATE INDEX ix_files_appliestoname
  ON t_files (AppliesTo ASC,Name ASC);
-CREATE INDEX ix_files_appliestonamedatesize
+CREATE INDEX ix_files_appliestonamedatesize
  ON t_files (AppliesTo ASC,Name ASC,FileDate ASC,FileSize ASC);
-CREATE INDEX ix_files_appliestonamesize
+CREATE INDEX ix_files_appliestonamesize
  ON t_files (AppliesTo ASC,Name ASC,FileSize ASC);
-CREATE INDEX ix_files_category
+CREATE INDEX ix_files_category
  ON t_files (Category ASC);
-CREATE INDEX ix_files_filesize
+CREATE INDEX ix_files_filesize
  ON t_files (FileSize ASC);
-CREATE INDEX ix_files_name
+CREATE INDEX ix_files_name
  ON t_files (Name ASC);
-CREATE INDEX ix_glossary_term
+CREATE INDEX ix_glossary_term
  ON t_glossary (Term ASC);
-CREATE INDEX ix_glossary_type
+CREATE INDEX ix_glossary_type
  ON t_glossary (Type ASC);
-CREATE INDEX ix_mainttypes_numericweight
+CREATE INDEX ix_mainttypes_numericweight
  ON t_mainttypes (NumericWeight ASC);
-CREATE INDEX ix_method_objectid
+CREATE INDEX ix_method_objectid
  ON t_method (Object_ID ASC);
-CREATE INDEX ix_metrictypes_numericweight
+CREATE INDEX ix_metrictypes_numericweight
  ON t_metrictypes (NumericWeight ASC);
-CREATE INDEX ix_object_classifier
+CREATE INDEX ix_object_classifier
  ON t_object (Classifier ASC);
-CREATE INDEX ix_object_classifierguid
+CREATE INDEX ix_object_classifierguid
  ON t_object (Classifier_guid ASC);
-CREATE INDEX ix_object_eaguidclassifier
+CREATE INDEX ix_object_eaguidclassifier
  ON t_object (ea_guid ASC,Classifier ASC);
-CREATE INDEX ix_object_eventflags
+CREATE INDEX ix_object_eventflags
  ON t_object (EventFlags ASC);
-CREATE INDEX ix_object_name
+CREATE INDEX ix_object_name
  ON t_object (Name ASC);
-CREATE INDEX ix_object_ntype
+CREATE INDEX ix_object_ntype
  ON t_object (NType ASC);
-CREATE INDEX ix_object_objecttype
+CREATE INDEX ix_object_objecttype
  ON t_object (Object_Type ASC);
-CREATE INDEX ix_object_packageid
+CREATE INDEX ix_object_packageid
  ON t_object (Package_ID ASC);
-CREATE INDEX ix_object_pdata1
+CREATE INDEX ix_object_pdata1
  ON t_object (PDATA1 ASC);
-CREATE INDEX ix_object_pdata2
+CREATE INDEX ix_object_pdata2
  ON t_object (PDATA2 ASC);
-CREATE INDEX ix_object_pdata3
+CREATE INDEX ix_object_pdata3
  ON t_object (PDATA3 ASC);
-CREATE INDEX ix_object_pdata4
+CREATE INDEX ix_object_pdata4
  ON t_object (PDATA4 ASC);
-CREATE INDEX ix_object_pdata5
+CREATE INDEX ix_object_pdata5
  ON t_object (PDATA5 ASC);
-CREATE INDEX ix_object_pkgidpdata1class
+CREATE INDEX ix_object_pkgidpdata1class
  ON t_object (Package_ID ASC,PDATA1 ASC,Classifier ASC);
-CREATE UNIQUE INDEX uq_object_eaguid
+CREATE UNIQUE INDEX uq_object_eaguid
  ON t_object (ea_guid ASC);
-CREATE INDEX ix_objectconstraint_constr
+CREATE INDEX ix_objectconstraint_constr
  ON t_objectconstraint ('Constraint' ASC);
-CREATE INDEX ix_objectconstraint_objectid
+CREATE INDEX ix_objectconstraint_objectid
  ON t_objectconstraint (Object_ID ASC);
-CREATE INDEX ix_objecteffort_objectid
+CREATE INDEX ix_objecteffort_objectid
  ON t_objecteffort (Object_ID ASC);
-CREATE INDEX ix_objectmetrics_metric
+CREATE INDEX ix_objectmetrics_metric
  ON t_objectmetrics (Metric ASC);
-CREATE INDEX ix_objectmetrics_metrictype
+CREATE INDEX ix_objectmetrics_metrictype
  ON t_objectmetrics (MetricType ASC);
-CREATE INDEX ix_objectmetrics_objectid
+CREATE INDEX ix_objectmetrics_objectid
  ON t_objectmetrics (Object_ID ASC);
-CREATE INDEX ix_objectproblems_objectid
+CREATE INDEX ix_objectproblems_objectid
  ON t_objectproblems (Object_ID ASC);
-CREATE INDEX ix_objectproblems_problem
+CREATE INDEX ix_objectproblems_problem
  ON t_objectproblems (Problem ASC);
-CREATE INDEX ix_objectproperties_eaguid
+CREATE INDEX ix_objectproperties_eaguid
  ON t_objectproperties (ea_guid ASC);
-CREATE INDEX ix_objectproperties_objectid
+CREATE INDEX ix_objectproperties_objectid
  ON t_objectproperties (Object_ID ASC);
-CREATE INDEX ix_objectproperties_objidprop
+CREATE INDEX ix_objectproperties_objidprop
  ON t_objectproperties (Object_ID ASC,Property ASC);
-CREATE INDEX ix_objectproperties_property
+CREATE INDEX ix_objectproperties_property
  ON t_objectproperties (Property ASC);
-CREATE INDEX ix_objectproperties_value
+CREATE INDEX ix_objectproperties_value
  ON t_objectproperties (Value ASC);
-CREATE INDEX ix_objectrequires_objectid
+CREATE INDEX ix_objectrequires_objectid
  ON t_objectrequires (Object_ID ASC);
-CREATE INDEX ix_objectrequires_reqid
+CREATE INDEX ix_objectrequires_reqid
  ON t_objectrequires (ReqID ASC);
-CREATE INDEX ix_objectrequires_requirement
+CREATE INDEX ix_objectrequires_requirement
  ON t_objectrequires (Requirement ASC);
-CREATE INDEX ix_objectresource_objectid
+CREATE INDEX ix_objectresource_objectid
  ON t_objectresource (Object_ID ASC);
-CREATE INDEX ix_objectrisks_objectid
+CREATE INDEX ix_objectrisks_objectid
  ON t_objectrisks (Object_ID ASC);
-CREATE INDEX ix_objectscenarios_objectid
+CREATE INDEX ix_objectscenarios_objectid
  ON t_objectscenarios (Object_ID ASC);
-CREATE INDEX ix_objectscenarios_oidevalscen
+CREATE INDEX ix_objectscenarios_oidevalscen
  ON t_objectscenarios (Object_ID ASC,EValue ASC,Scenario ASC);
-CREATE INDEX ix_objecttests_objectid
+CREATE INDEX ix_objecttests_objectid
  ON t_objecttests (Object_ID ASC);
-CREATE INDEX ix_objecttests_objidtclassstat
+CREATE INDEX ix_objecttests_objidtclassstat
  ON t_objecttests (Object_ID ASC,TestClass ASC,Status ASC);
-CREATE INDEX ix_objecttrx_objectid
+CREATE INDEX ix_objecttrx_objectid
  ON t_objecttrx (Object_ID ASC);
-CREATE INDEX ix_objecttrx_trx
+CREATE INDEX ix_objecttrx_trx
  ON t_objecttrx (TRX ASC);
-CREATE INDEX ix_objecttypes_imageid
+CREATE INDEX ix_objecttypes_imageid
  ON t_objecttypes (ImageID ASC);
-CREATE INDEX ix_operation_classifier
+CREATE INDEX ix_operation_classifier
  ON t_operation (Classifier ASC);
-CREATE INDEX ix_operation_name
+CREATE INDEX ix_operation_name
  ON t_operation (Name ASC);
-CREATE INDEX ix_operation_objectid
+CREATE INDEX ix_operation_objectid
  ON t_operation (Object_ID ASC);
-CREATE INDEX ix_operation_objectidopid
+CREATE INDEX ix_operation_objectidopid
  ON t_operation (Object_ID ASC,OperationID ASC);
-CREATE INDEX uq_operation_eaguid
+CREATE INDEX uq_operation_eaguid
  ON t_operation (ea_guid ASC);
-CREATE INDEX ix_operationparams_classifier
+CREATE INDEX ix_operationparams_classifier
  ON t_operationparams (Classifier ASC);
-CREATE INDEX ix_operationparams_operationid
+CREATE INDEX ix_operationparams_operationid
  ON t_operationparams (OperationID ASC);
-CREATE INDEX ix_operationparams_opidpos
+CREATE INDEX ix_operationparams_opidpos
  ON t_operationparams (OperationID ASC,Pos ASC);
-CREATE UNIQUE INDEX uq_operationparams_eaguid
+CREATE UNIQUE INDEX uq_operationparams_eaguid
  ON t_operationparams (ea_guid ASC);
-CREATE INDEX ix_operationposts_operationid
+CREATE INDEX ix_operationposts_operationid
  ON t_operationposts (OperationID ASC);
-CREATE INDEX ix_operationpres_operationid
+CREATE INDEX ix_operationpres_operationid
  ON t_operationpres (OperationID ASC);
-CREATE INDEX ix_operationtag_eaguid
+CREATE INDEX ix_operationtag_eaguid
  ON t_operationtag (ea_guid ASC);
-CREATE INDEX ix_operationtag_elementid
+CREATE INDEX ix_operationtag_elementid
  ON t_operationtag (ElementID ASC);
-CREATE INDEX ix_operationtag_elementidprop
+CREATE INDEX ix_operationtag_elementidprop
  ON t_operationtag (ElementID ASC,Property ASC);
-CREATE INDEX ix_operationtag_property
+CREATE INDEX ix_operationtag_property
  ON t_operationtag (Property ASC);
-CREATE INDEX ix_operationtag_value
+CREATE INDEX ix_operationtag_value
  ON t_operationtag (VALUE ASC);
-CREATE INDEX ix_package_name
+CREATE INDEX ix_package_name
  ON t_package (Name ASC);
-CREATE INDEX ix_package_packageid
+CREATE INDEX ix_package_packageid
  ON t_package (Package_ID ASC);
-CREATE INDEX ix_package_parentid
+CREATE INDEX ix_package_parentid
  ON t_package (Parent_ID ASC);
-CREATE UNIQUE INDEX uq_package_eaguid
+CREATE UNIQUE INDEX uq_package_eaguid
  ON t_package (ea_guid ASC);
-CREATE INDEX ix_problemtypes_numericweight
+CREATE INDEX ix_problemtypes_numericweight
  ON t_problemtypes (NumericWeight ASC);
-CREATE INDEX ix_requiretypes_numericweight
+CREATE INDEX ix_requiretypes_numericweight
  ON t_requiretypes (NumericWeight ASC);
-CREATE INDEX ix_risktypes_numericweight
+CREATE INDEX ix_risktypes_numericweight
  ON t_risktypes (NumericWeight ASC);
-CREATE INDEX ix_roleconstraint_connectorid
+CREATE INDEX ix_roleconstraint_connectorid
  ON t_roleconstraint (ConnectorID ASC);
-CREATE INDEX ix_roleconstraint_constraint
+CREATE INDEX ix_roleconstraint_constraint
  ON t_roleconstraint ('Constraint' ASC);
-CREATE INDEX ix_scenariotypes_numericweight
+CREATE INDEX ix_scenariotypes_numericweight
  ON t_scenariotypes (NumericWeight ASC);
-CREATE INDEX ix_script_scriptcategory
+CREATE INDEX ix_script_scriptcategory
  ON t_script (ScriptCategory ASC);
-CREATE INDEX ix_seclocks_entityidtype
+CREATE INDEX ix_seclocks_entityidtype
  ON t_seclocks (EntityID ASC,EntityType ASC);
-CREATE INDEX ix_seclocks_entityiduserid
+CREATE INDEX ix_seclocks_entityiduserid
  ON t_seclocks (EntityID ASC,UserID ASC);
-CREATE INDEX ix_seclocks_entityidusrtype
+CREATE INDEX ix_seclocks_entityidusrtype
  ON t_seclocks (EntityID ASC,UserID ASC,EntityType ASC);
-CREATE INDEX ix_seclocks_groupid
+CREATE INDEX ix_seclocks_groupid
  ON t_seclocks (GroupID ASC);
-CREATE INDEX ix_seclocks_groupiduserid
+CREATE INDEX ix_seclocks_groupiduserid
  ON t_seclocks (GroupID ASC,UserID ASC);
-CREATE INDEX ix_snapshot_position
+CREATE INDEX ix_snapshot_position
  ON t_snapshot (Position ASC);
-CREATE INDEX ix_snapshot_seriesid
+CREATE INDEX ix_snapshot_seriesid
  ON t_snapshot (SeriesID ASC);
-CREATE INDEX ix_stereotypes_eaguid
+CREATE INDEX ix_stereotypes_eaguid
  ON t_stereotypes (ea_guid ASC);
-CREATE INDEX ix_stereotypes_stereotype
+CREATE INDEX ix_stereotypes_stereotype
  ON t_stereotypes (Stereotype ASC);
-CREATE INDEX ix_taggedvalue_elementid
+CREATE INDEX ix_taggedvalue_elementid
  ON t_taggedvalue (ElementID ASC);
-CREATE INDEX ix_tcf_weight
+CREATE INDEX ix_tcf_weight
  ON t_tcf (Weight ASC);
-CREATE INDEX ix_testtypes_numericweight
+CREATE INDEX ix_testtypes_numericweight
  ON t_testtypes (NumericWeight ASC);
-CREATE INDEX ix_trxtypes_description
+CREATE INDEX ix_trxtypes_description
  ON t_trxtypes (Description ASC);
-CREATE INDEX ix_trxtypes_numericweight
+CREATE INDEX ix_trxtypes_numericweight
  ON t_trxtypes (NumericWeight ASC);
-CREATE INDEX ix_trxtypes_trx
+CREATE INDEX ix_trxtypes_trx
  ON t_trxtypes (TRX ASC);
-CREATE INDEX ix_version_elementid
+CREATE INDEX ix_version_elementid
  ON t_version (ElementID ASC);
-CREATE INDEX ix_xref_client
+CREATE INDEX ix_xref_client
  ON t_xref (Client ASC);
-CREATE INDEX ix_xref_name
+CREATE INDEX ix_xref_name
  ON t_xref (Name ASC);
-CREATE INDEX ix_xref_nametype
+CREATE INDEX ix_xref_nametype
  ON t_xref (Name ASC,Type ASC);
-CREATE INDEX ix_xref_supplier
+CREATE INDEX ix_xref_supplier
  ON t_xref (Supplier ASC);
-CREATE INDEX ix_xref_type
+CREATE INDEX ix_xref_type
  ON t_xref (Type ASC);
-CREATE INDEX ix_xrefsystem_client
+CREATE INDEX ix_xrefsystem_client
  ON t_xrefsystem (Client ASC);
-CREATE INDEX ix_xrefsystem_supplier
+CREATE INDEX ix_xrefsystem_supplier
  ON t_xrefsystem (Supplier ASC);
-CREATE INDEX ix_xrefsystem_type
+CREATE INDEX ix_xrefsystem_type
  ON t_xrefsystem (Type ASC);
-CREATE INDEX ix_xrefuser_client
+CREATE INDEX ix_xrefuser_client
  ON t_xrefuser (Client ASC);
-CREATE INDEX ix_xrefuser_supplier
+CREATE INDEX ix_xrefuser_supplier
  ON t_xrefuser (Supplier ASC);
-CREATE INDEX ix_xrefuser_type
+CREATE INDEX ix_xrefuser_type
  ON t_xrefuser (Type ASC);
-CREATE INDEX 'ix_xref_clientname'
+CREATE INDEX 'ix_xref_clientname'
  ON 't_xref' ('Client' ASC,'Name' ASC);
 CREATE INDEX idx_ea_guid ON t_objectproperties(ea_guid);
 COMMIT;
