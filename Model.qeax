@@ -1,3 +1,6 @@
+DEBUG: Dump method called, starting cached path lookup
+DEBUG: Binary path found: C:\Users\danie\AppData\Local\Microsoft\WinGet\Packages\SQLite.SQLite_Microsoft.Winget.Source_8wekyb3d8bbwe\sqlite3.exe
+DEBUG: Starting SQLite command: C:\Users\danie\AppData\Local\Microsoft\WinGet\Packages\SQLite.SQLite_Microsoft.Winget.Source_8wekyb3d8bbwe\sqlite3.exe C:\Users\danie\AppData\Local\Temp\gitsqlite-660297144.db .dump
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
 CREATE TABLE t_attribute
@@ -6338,7 +6341,8 @@ CREATE INDEX ix_operationtag_value
 CREATE INDEX ix_package_name
  ON t_package (Name ASC);
 CREATE INDEX ix_package_packageid
- ON t_package (Package_ID ASC);
+ ON t_package (Package_IDEBUG: SQLite command completed with error: <nil>
+D ASC);
 CREATE INDEX ix_package_parentid
  ON t_package (Parent_ID ASC);
 CREATE UNIQUE INDEX uq_package_eaguid
