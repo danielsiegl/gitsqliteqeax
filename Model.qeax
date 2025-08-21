@@ -1,6 +1,5 @@
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-/* WARNING: Script requires that SQLITE_DBCONFIG_DEFENSIVE be disabled */
 CREATE TABLE t_attribute
 (
 	Object_ID INTEGER NULL DEFAULT 0,
@@ -2386,7 +2385,6 @@ CREATE TABLE t_operationparams
 	StyleEx TEXT NULL COLLATE NOCASE,
 	CONSTRAINT pk_operationparams PRIMARY KEY (OperationID,Name)
 );
-/* WARNING: Script requires that SQLITE_DBCONFIG_DEFENSIVE be disabled */
 CREATE TABLE t_operationposts
 (
 	OperationID INTEGER NOT NULL DEFAULT 0,
